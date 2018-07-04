@@ -36,6 +36,37 @@ if [ -f ~/.env ] ; then
 . ~/.env
 fi
 
+function daily() {
+    local current_directory=`pwd`;
+    local year=`date +%Y`;
+    local month=`date +%m`;
+    local day=`date +%d`;
+
+    cd ~/daily-report;
+    
+    if [ ! -e "~/daily-report/${year}" ]; then
+	 mkdir $year;
+	 cd $year;
+    else
+	 cd $year;
+    fi
+
+    if [ ! -e "~/daily-report/${year}/${month}" ]; then
+	 mkdir $month;
+	 cd $month;
+    else
+	 cd $month;
+    fi
+
+    vim "${day}.md";
+    git add -A;
+    git commit -m "日報のアップロード ${year}-${month}-${day}";
+    git push origin master;
+
+    cd $current_directory;
+}
+
+
 function sgrep() {
     search_word=$1;
     target_file=$2;
