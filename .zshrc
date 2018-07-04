@@ -153,7 +153,7 @@ alias gadd='git add .'
 alias gf="git fetch --all"
 alias glp='git log -p'
 alias gp='~/zshfiles/git-padd.sh'
-alias gdel='git-pchk.sh'
+alias gdel='~/zshfiles/git-pchk.sh'
 alias gun='git reset HEAD'
 alias gaw="git diff -w --no-color | git apply --cached"
 alias us="git checkout HEAD"
@@ -448,6 +448,7 @@ color_stderr() {
 }
 exec 2> >(color_stderr)
 
+# ファイルの読み込みを行うためのfunction
 function loadlib() {
         lib=${1:?"You have to specify a library file"}
         if [ -f "$lib" ];then #ファイルの存在を確認
@@ -455,4 +456,4 @@ function loadlib() {
         fi
 }
 
-loadlib $ZDOTDIR/.zsh-local
+loadlib ~/zshfiles/.zsh-local
