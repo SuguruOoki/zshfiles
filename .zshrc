@@ -43,7 +43,7 @@ function daily() {
     local day=`date +%d`;
 
     cd ~/daily-report;
-    
+
     if [ ! -e "~/daily-report/${year}" ]; then
 	 mkdir $year;
 	 cd $year;
