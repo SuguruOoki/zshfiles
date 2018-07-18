@@ -8,6 +8,7 @@ alias gd="peco-git-cd"
 alias ph="peco-select-history"
 alias nkfg="nkf --guess"
 alias ali='alias-change'
+alias alil='alias-local-change'
 alias ll="ls -l"
 alias la="ls -a"
 alias ad='cd $HOME/"$(cat ~/actives.txt | peco)"'
@@ -33,7 +34,11 @@ export PATH=$PATH:/usr/local/mysql/bin
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 if [ -f ~/.env ] ; then
-. ~/.env
+  source ~/.env
+fi
+
+if [ -f ~/zshfiles/.zsh-local ] ; then
+  source ~/zshfiles/.zsh-local;
 fi
 
 function daily() {
@@ -148,6 +153,11 @@ function peco-git-cd() {
 function alias-change() {
   vim ~/.zshrc;
   source ~/.zshrc;
+}
+
+function alias-local-change() {
+  vim ~/zshfiles/.zsh-local;
+  source ~/zshfiles/.zsh-local;
 }
 
 function peco-select-history() {
