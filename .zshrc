@@ -15,7 +15,7 @@ alias sou="source"
 alias mvim="_peco_mdfind"
 alias ctags="`brew --prefix`/bin/ctags"
 alias vgs="vagrant global-status -a"
-alias phpunit="vagrant ssh -c "
+alias vpu="vagrant ssh -c ./phpunit.sh"
 alias pcdd="peco-docker-cd"
 alias pcd="peco-docker-compose-cd"
 alias dc="docker-compose"
@@ -43,6 +43,7 @@ function daily() {
     local day=`date +%d`;
 
     cd ~/daily-report;
+    git pull origin master;
 
     if [ ! -e "~/daily-report/${year}" ]; then
 	 mkdir $year;
@@ -145,7 +146,6 @@ function peco-git-cd() {
 }
 
 function alias-change() {
-  # vim ~/.bashrc;
   vim ~/.zshrc;
   source ~/.zshrc;
 }
