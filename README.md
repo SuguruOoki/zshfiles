@@ -19,6 +19,12 @@ chmod +x install.sh;
 ./install.sh;
 ```
 
+## iterm2のテーマについて
+
+iterm2でatom-onedarkを使用したかったので、gitのsubmoduleに入れてある。
+そのため、そこをiterm2の設定 > color においてimportして利用するとそのまま使える。
+
+
 ## .zsh-localについて
 
 その環境でのみ利用したいコマンドがある場合(例えば社外秘にしたいパスやパスワードなどの情報が入ったfunctionなど)は.zsh-localというファイルをzshfiles内に用意する。
