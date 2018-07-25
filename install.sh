@@ -1,4 +1,4 @@
 cd ~/zshfiles;
-ln -s .zshrc ~/.zshrc; 
+ln -s ~/zshfiles/.zshrc ~/.zshrc; 
 touch .zsh-local
-ln -s .zsh-local ~/.zsh-local
+ln -s ~/zshfiles/.zsh-local ~/.zsh-local

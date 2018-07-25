@@ -223,7 +223,7 @@ fi
 # Customize to your needs...
 alias trans='trans -b en:ja'
 alias transj='trans -b ja:en'
-fpath=($HOME/.zsh/anyframe(N-/) $fpath)
+fpath=($HOME/zshfiles/anyframe(N-/) $fpath)
 autoload -Uz anyframe-init
 anyframe-init
 bindkey '^xb' anyframe-widget-cdr
@@ -498,3 +498,7 @@ function loadlib() {
 }
 
 loadlib ~/zshfiles/.zsh-local
+
+# Add colors to Terminal
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
