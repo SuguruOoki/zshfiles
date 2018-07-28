@@ -502,3 +502,5 @@ loadlib ~/zshfiles/.zsh-local
 # Add colors to Terminal
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+
+# 多段SSHのやつlocalにしかないので汎用的なやつをこちらにもかく
