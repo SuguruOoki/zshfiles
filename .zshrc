@@ -502,3 +502,27 @@ loadlib ~/zshfiles/.zsh-local
 # Add colors to Terminal
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+
+
+# batchを止めるためにコメントアウトを追記するコマンド
+function stopcron() {
+  # tmuxでまとめてssh
+  # /etc/rc.d/init.d/crond stop
+  service crond stop;
+  # ファイル名を変更することでファイルに書いてある全てのcronを止める方法
+  # 引数を持たせてあげれば、これでファイル名を指定してあげるだけでなんとかなりそう。
+  # sudo mv -i /etc/cron.d/{,.}$1
+}
+
+# ただコメントアウトを追記するコマンド
+function add-comment-out() {
+  local searchword=$1;
+  sed "/$searchword/s/^/# /g" /work/test_1.txt
+}
+
+# 多段SSHのやつlocalにしかないので汎用的なやつをこちらにもかく
+# tmuxを使った同時操作によるリリースコマンド
+# Apacheのログの場所を取得するコマンド
+# nginxのログの場所を取得するコマンド
+# phpのログの場所を取得するコマンド
+# 上記ログから特定のエラーがないかを取得するコマンド
