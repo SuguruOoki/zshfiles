@@ -153,11 +153,19 @@ function peco-git-cd() {
 function alias-change() {
   vim ~/.zshrc;
   source ~/.zshrc;
+  git add -A
+  git commit
+  # status='git status'
+
+  # if [ "$status" -eq  ] :then
+  # fi
 }
 
 function alias-local-change() {
   vim ~/zshfiles/.zsh-local;
   source ~/zshfiles/.zsh-local;
+  git add -A;
+  git commit;
 }
 
 function peco-select-history() {
@@ -520,10 +528,45 @@ function add-comment-out() {
   sed "/$searchword/s/^/# /g" /work/test_1.txt
 }
 
-# 多段SSHのやつlocalにしかないので汎用的なやつをこちらにもかく
+# phpのログの場所を取得するコマンド
+function get_php_log_place() {
+  php -i | grep error_log;
+}
+
+# 多段SSHを行うためのコマンド
+# 第一引数: 踏み台サーバ
+# 第二引数: ターゲットサーバ
+# Passwordは発行した踏み台サーバのパスワードに置き換えて使用すること
+# klistの部分は踏み台サーバにてパスワードを取得しているかコマンド
+# kinitはパスワードの発行コマンドであるので、これをそれに当たるコマンド
+# 環境によってはtarget_serverの書き方でawkのやり方がうまくいかない場合も想定される
+function several_ssh() {
+   # kinitのパスワードを書いておく
+   local step_server=$1
+   SSH_PASS=Password
+   USER_NAME=$(whoami)
+   expirate=$(ssh $step_server klist 2> /dev/null | wc -l | tr -d ' ')
+   if [ $expirate = 0 ]; then
+        # sleepを入れないと、チケットを取得する前にexpectが終わってしまう
+        expect -c "
+        spawn ssh $step_sever \"kinit\"
+        expect \"Password\"
+        send \"${SSH_PASS}\n\"
+        spawn sleep 0.5s
+        "
+   fi
+   target_server=$2
+   if [ -z "$2" ]; then
+       target_server=$(ssh $step_server "cat /etc/hosts" | awk -F'\t' '{printf $3"\n"}' | grep -v '^\s*$' | uniq | grep -v 'db\d$' | sort | peco | head -n 1 | sed -e "s/^\*\s*//g")
+   fi
+   if [ -n "$target_server" ]; then
+        ssh -At $step_server ssh $target_server
+   fi
+}
+
 # tmuxを使った同時操作によるリリースコマンド
 # Apacheのログの場所を取得するコマンド
 # nginxのログの場所を取得するコマンド
-# phpのログの場所を取得するコマンド
 # 上記ログから特定のエラーがないかを取得するコマンド
 # 作りたいものを一瞬で開くためのコマンド
+# 調査の時にgrepしたやつを全てそのままpbcopyして貼り付けられるやつ。
