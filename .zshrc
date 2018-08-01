@@ -153,8 +153,9 @@ function peco-git-cd() {
 function alias-change() {
   vim ~/.zshrc;
   source ~/.zshrc;
-  git add -A
-  git commit
+  git add -A;
+  git commit;
+  git push origin master;
   # status='git status'
 
   # if [ "$status" -eq  ] :then
@@ -164,8 +165,6 @@ function alias-change() {
 function alias-local-change() {
   vim ~/zshfiles/.zsh-local;
   source ~/zshfiles/.zsh-local;
-  git add -A;
-  git commit;
 }
 
 function peco-select-history() {
