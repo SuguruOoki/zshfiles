@@ -151,11 +151,14 @@ function peco-git-cd() {
 }
 
 function alias-change() {
-  vim ~/.zshrc;
+  local current_directory=`pwd`;
+  cd ~/zshfiles;
+  vim .zshrc;
   source ~/.zshrc;
   git add -A;
   git commit;
   git push origin master;
+  cd $current_directory;
   # status='git status'
 
   # if [ "$status" -eq  ] :then
@@ -577,3 +580,4 @@ function get_php_log_place() {
 # 上記ログから特定のエラーがないかを取得するコマンド
 # 作りたいものを一瞬で開くためのコマンド
 # 調査の時にgrepしたやつを全てそのままpbcopyして貼り付けられるやつ。
+# 調査時に該当してgrepしたやつをうまい感じでスプレッドシートに貼ってくれるやつ
