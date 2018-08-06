@@ -581,6 +581,10 @@ function get_php_log_place() {
 # 作りたいものを一瞬で開くためのコマンド
 # 調査の時にgrepしたやつを全てそのままpbcopyして貼り付けられるやつ。
 # 調査時に該当してgrepしたやつをうまい感じでスプレッドシートに貼ってくれるやつ
+function ag_paste_to_spreadsheet() {
+  ag -l $1;
+  # spreadsheetに貼り付けるためにgoogleのライブラリを利用
+}
 
 # redmineの操作をpecoって選ぶ
 # 操作の選択はcase文
