@@ -209,6 +209,7 @@ alias gun='git reset HEAD'
 alias gaw="git diff -w --no-color | git apply --cached"
 alias us="git checkout HEAD"
 alias graph='git log --graph'
+alias gds='git log --diff-filter=D --summary'
 
 # vim系
 alias cvim='vim ~/.vimrc;source ~/.vimrc'
