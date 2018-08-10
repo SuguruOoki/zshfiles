@@ -589,5 +589,6 @@ function ag_paste_to_spreadsheet() {
 # redmineの操作をpecoって選ぶ
 # 操作の選択はcase文
 # それをfzfに食わせる
+# 間の操作は全て踏み台サーバから叩く。
 
 # 踏み台サーバーからredmineAPIを叩きにいく
