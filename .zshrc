@@ -64,6 +64,7 @@ function daily() {
 	 cd $month;
     fi
 
+
     vim "${day}.md";
     git add -A;
     git commit -m "日報のアップロード ${year}-${month}-${day}";
@@ -81,6 +82,10 @@ function sgrep() {
     else
         echo '引数が足りません';
     fi
+}
+
+function fvim() {
+  vim $(fzf);
 }
 
 function peco-sshconfig-ssh() {
