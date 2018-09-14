@@ -195,6 +195,7 @@ _peco_mdfind() {
 alias net='open -n -a "Google Chrome.app" --args --app="http://php.net/manual/ja/funcref.php"'
 alias enote='open -n -a "Google Chrome.app" --args --app="https://www.evernote.com/Home.action?message=forgotPasswordAction.sent&login=true#n=900d5ae2-93c9-491c-8575-eaa08db14039&s=s626&ses=4&sh=2&sds=5&"'
 alias myer='open -n -a "Google Chrome.app" --args --app="https://dev.mysql.com/doc/refman/5.6/ja/error-messages-server.html"'
+alias checklist='open -n -a "Google Chrome.app" --args --app="https://qiita.com/SuguruOoki/private/65184ab64a8ae0cf9b86"'
 
 # git系
 alias nes="ssh nesp03"
