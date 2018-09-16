@@ -198,7 +198,6 @@ alias myer='open -n -a "Google Chrome.app" --args --app="https://dev.mysql.com/d
 alias checklist='open -n -a "Google Chrome.app" --args --app="https://qiita.com/SuguruOoki/private/65184ab64a8ae0cf9b86"'
 
 # git系
-alias nes="ssh nesp03"
 alias gcb='git checkout -b'
 alias gf='git fetch --all'
 alias gc='git checkout $(git branch | sed -e "/*/d" | peco)'
@@ -218,7 +217,7 @@ alias graph='git log --graph'
 alias gds='git log --diff-filter=D --summary'
 
 # vim系
-alias cvim='vim ~/.vimrc;source ~/.vimrc'
+alias cvim='vim ~/.vimrc'
 alias sp='open -a "Sequel Pro.app"'
 alias lo="tailmainfunctionsystemlog"
 alias veco='~/.vim/ctrlp-veco/bin/veco'
