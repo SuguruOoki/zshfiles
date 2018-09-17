@@ -593,6 +593,19 @@ function ag_paste_to_spreadsheet() {
   # spreadsheetに貼り付けるためにgoogleのライブラリを利用
 }
 
+# fshow - git commit browser
+# ブランチをグラフで綺麗に見るためのコマンド。
+fshow() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}
+
 # redmineの操作をpecoって選ぶ
 # 操作の選択はcase文
 # それをfzfに食わせる
