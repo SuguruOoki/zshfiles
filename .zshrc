@@ -592,9 +592,9 @@ function ag_paste_to_spreadsheet() {
   # spreadsheetに貼り付けるためにgoogleのライブラリを利用
 }
 
-# fshow - git commit browser
+# gg - git commit browser→git graphの略
 # ブランチをグラフで綺麗に見るためのコマンド。
-fshow() {
+function gg() {
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
   fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
@@ -603,6 +603,14 @@ fshow() {
                 xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
                 {}
 FZF-EOF"
+}
+
+# fshowで選択した結果をくわせてコミットをrevertするコマンド
+# 現状失敗した場合のrevertを高速で行うためのコマンドとなる
+# また、masterで行うことを前提としているため、マージコミットを
+# 扱うことを前提に設計している
+function select-revert() {
+  
 }
 
 # redmineの操作をpecoって選ぶ
