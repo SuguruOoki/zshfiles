@@ -41,6 +41,14 @@ if [ -f ~/zshfiles/.zsh-local ] ; then
   source ~/zshfiles/.zsh-local;
 fi
 
+
+function git-checkout-remote() {
+  local branch=`git branch -a | fzf`
+  if [ -n "$branch" ]; then
+    git checkout -b ${branch} origin/${branch}
+  fi
+}
+
 function daily() {
     local current_directory=`pwd`;
     local year=`date +%Y`;
