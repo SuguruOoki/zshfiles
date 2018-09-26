@@ -42,6 +42,8 @@ if [ -f ~/zshfiles/.zsh-local ] ; then
 fi
 
 
+# 現在の方法ではbranch名がremote/~/~などと言ったブランチ名への対応ができていないため、
+# まだ使用しない方が良い。
 function git-checkout-remote() {
   local branch=`git branch -a | fzf`
   if [ -n "$branch" ]; then
