@@ -211,6 +211,7 @@ alias vim-tips='open -n -a "Google Chrome.app" --args --app="https://qiita.com/S
 alias gcb='git checkout -b'
 alias gf='git fetch --all'
 alias gc='git checkout $(git branch | sed -e "/*/d" | peco)'
+alias gcr='git-checkout-remote'
 alias gme='git commit --amend --no-edit'
 alias gul='git pull origin'
 alias gsh='git push origin'
