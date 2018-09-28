@@ -98,6 +98,10 @@ function fvim() {
   vim $(fzf);
 }
 
+function fgvim() {
+  vim $(git diff --name-only | fzf);
+}
+
 function peco-sshconfig-ssh() {
     local host=$(grep 'Host ' ~/.ssh/config | awk '{print $2}' | peco)
     if [ -n "$host" ]; then
