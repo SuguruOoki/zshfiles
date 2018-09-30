@@ -170,18 +170,11 @@ function peco-git-cd() {
 }
 
 function alias-change() {
-  local current_directory=`pwd`;
-  cd ~/zshfiles;
-  vim .zshrc;
-  source ~/.zshrc;
+  vim ~/zshfiles/.zshrc;
+  source ~/zshfiles/.zshrc;
   git add -A;
   git commit;
   git push origin master;
-  cd $current_directory;
-  # status='git status'
-
-  # if [ "$status" -eq  ] :then
-  # fi
 }
 
 function alias-local-change() {
@@ -234,9 +227,9 @@ alias graph='git log --graph'
 alias gds='git log --diff-filter=D --summary'
 
 # vim系
-alias cvim='vim ~/.vimrc'
+alias cvim='vim ~/vimfiles/.vimrc'
 alias sp='open -a "Sequel Pro.app"'
-alias lo="tailmainfunctionsystemlog"
+alias log="tailmainfunctionsystemlog"
 alias veco='~/.vim/ctrlp-veco/bin/veco'
 
 # ここまで個人で作成したコマンド
@@ -321,17 +314,17 @@ HISTSIZE=100000
 SAVEHIST=100000
 
 # 色の設定
-local DEFAULT=$'%{^[[m%}'$
-local RED=$'%{^[[1;31m%}'$
-local GREEN=$'%{^[[1;32m%}'$
-local YELLOW=$'%{^[[1;33m%}'$
-local BLUE=$'%{^[[1;34m%}'$
-local PURPLE=$'%{^[[1;35m%}'$
-local LIGHT_BLUE=$'%{^[[1;36m%}'$
-local WHITE=$'%{^[[1;37m%}'$
+# local DEFAULT=$'%{^[[m%}'$
+# local RED=$'%{^[[1;31m%}'$
+# local GREEN=$'%{^[[1;32m%}'$
+# local YELLOW=$'%{^[[1;33m%}'$
+# local BLUE=$'%{^[[1;34m%}'$
+# local PURPLE=$'%{^[[1;35m%}'$
+# local LIGHT_BLUE=$'%{^[[1;36m%}'$
+# local WHITE=$'%{^[[1;37m%}'$
 
-export LSCOLORS=exfxcxdxbxegedabagacad
-export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+# export LSCOLORS=exfxcxdxbxegedabagacad
+# export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 
 # 自動補完を有効にする
 # コマンドの引数やパス名を途中まで入力して <Tab> を押すといい感じに補完してくれる
