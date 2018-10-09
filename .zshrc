@@ -29,6 +29,13 @@ alias ldup='docker-compose up -d nginx mysql phpmyadmin redis workspace'
 alias selenium-stop="ps aux | grep selenium-server-standalone | grep -v grep |awk {'print \$2'} |xargs kill -9"
 alias selenium-up='java -jar selenium-server-standalone-3.4.0.jar &'
 
+# diffツールを環境によって使い分ける
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff'
+else
+  alias diff='diff'
+fi
+
 # PATHの設定
 export PATH=$PATH:/usr/local/mysql/bin
 export PATH=$HOME/.nodebrew/current/bin:$PATH
@@ -611,16 +618,27 @@ function gg() {
       --bind "ctrl-m:execute:
                 (grep -o '[a-f0-9]\{7\}' | head -1 |
                 xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
-                {}
-FZF-EOF"
+                {} FZF-EOF"
 }
+
+function revert_select() {
+  local commit=`git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {} FZF-EOF"`
+  echo commit
+}
+
 
 # fshowで選択した結果をくわせてコミットをrevertするコマンド
 # 現状失敗した場合のrevertを高速で行うためのコマンドとなる
 # また、masterで行うことを前提としているため、マージコミットを
 # 扱うことを前提に設計している
 function select-revert() {
-  
+  git log 
 }
 
 # redmineの操作をpecoって選ぶ
