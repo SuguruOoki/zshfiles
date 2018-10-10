@@ -641,6 +641,11 @@ function select-revert() {
   git log 
 }
 
+function cat-csv() {
+  local file=`$1`
+  sed 's/,,/, ,/g;s/,,/, ,/g' $file | column -s, -t
+}
+
 # redmineの操作をpecoって選ぶ
 # 操作の選択はcase文
 # それをfzfに食わせる
