@@ -646,6 +646,21 @@ function cat-csv() {
   sed 's/,,/, ,/g;s/,,/, ,/g' $file | column -s, -t
 }
 
+function cat-tsv() {
+  local file=$1
+  sed 's/               /       /g;s/            /         /g' $file | column -s, -t
+}
+
+function hanten() {
+  local file=$1
+  awk '
+  { for (i=1; i<=NF; i++)  { a[NR,i] = $i } } NF>p { p = NF }
+  END {
+      for(j=1; j<=p; j++) { str=a[1,j]; for(i=2; i<=NR; i++){ str=str" "a[i,j]; }
+        print str
+      }
+  }' $file | column -s, -t
+}
 # redmineの操作をpecoって選ぶ
 # 操作の選択はcase文
 # それをfzfに食わせる
