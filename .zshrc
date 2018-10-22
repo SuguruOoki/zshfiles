@@ -29,6 +29,13 @@ alias ldup='docker-compose up -d nginx mysql phpmyadmin redis workspace'
 alias selenium-stop="ps aux | grep selenium-server-standalone | grep -v grep |awk {'print \$2'} |xargs kill -9"
 alias selenium-up='java -jar selenium-server-standalone-3.4.0.jar &'
 
+# diffツールを環境によって使い分ける
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff'
+else
+  alias diff='diff'
+fi
+
 # PATHの設定
 export PATH=$PATH:/usr/local/mysql/bin
 export PATH=$HOME/.nodebrew/current/bin:$PATH
@@ -508,12 +515,12 @@ peco-mdfind-cd() {
 }
 
 zmodload zsh/terminfo zsh/system
-color_stderr() {
-  while sysread std_err_color; do
-    syswrite -o 2 "${fg_bold[red]}${std_err_color}${terminfo[sgr0]}"
-  done
-}
-exec 2> >(color_stderr)
+# color_stderr() {
+#   while sysread std_err_color; do
+#     syswrite -o 2 "${fg_bold[red]}${std_err_color}${terminfo[sgr0]}"
+#   done
+# }
+# exec 2> >(color_stderr)
 
 # ファイルの読み込みを行うためのfunction
 function loadlib() {
@@ -611,16 +618,60 @@ function gg() {
       --bind "ctrl-m:execute:
                 (grep -o '[a-f0-9]\{7\}' | head -1 |
                 xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
-                {}
-FZF-EOF"
+                {} FZF-EOF"
 }
+
+function revert_select() {
+  local commit=`git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {} FZF-EOF"`
+  echo commit
+}
+
 
 # fshowで選択した結果をくわせてコミットをrevertするコマンド
 # 現状失敗した場合のrevertを高速で行うためのコマンドとなる
 # また、masterで行うことを前提としているため、マージコミットを
 # 扱うことを前提に設計している
 function select-revert() {
-  
+  git log 
+}
+
+function cat-csv() {
+  local file=`$1`
+  sed 's/,,/, ,/g;s/,,/, ,/g' $file | column -s, -t
+}
+
+function cat-tsv() {
+  local file=$1
+  sed 's/               /       /g;s/            /         /g' $file | column -s, -t
+}
+
+function hanten() {
+  local file=$1
+  awk '
+  { for (i=1; i<=NF; i++)  { a[NR,i] = $i } } NF>p { p = NF }
+  END {
+      for(j=1; j<=p; j++) { str=a[1,j]; for(i=2; i<=NR; i++){ str=str" "a[i,j]; }
+        print str
+      }
+  }' $file | column -s, -t
+}
+
+# SchemaSpyを使ってer図を作成する。
+# 基本の引数をmysqlに合わせて作成するものとし、
+# 他のことについては適宜作成するものとする。
+# FIXME: 今の形ではDockerImageがない場合に、コマンドが失敗する。
+# そのため、dotfilesの初期化の際にimageを入れる処理を加える必要がある。
+function make-er-from-db() {
+  local PWD=`pwd`
+  local 
+  docker run -v "$PWD/schema:/output" --net="host" schemaspy/schemaspy:snapshot \
+           -t <DB種類> -host <DBホスト名/IP>:<ポート> -db <DB名> -u <DBユーザー名> -p <DBパスワード>
 }
 
 # redmineの操作をpecoって選ぶ
