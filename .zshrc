@@ -667,12 +667,12 @@ function hanten() {
 # 他のことについては適宜作成するものとする。
 # FIXME: 今の形ではDockerImageがない場合に、コマンドが失敗する。
 # そのため、dotfilesの初期化の際にimageを入れる処理を加える必要がある。
-function make-er-from-db() {
-  local PWD=`pwd`
-  local 
-  docker run -v "$PWD/schema:/output" --net="host" schemaspy/schemaspy:snapshot \
-           -t <DB種類> -host <DBホスト名/IP>:<ポート> -db <DB名> -u <DBユーザー名> -p <DBパスワード>
-}
+# function make-er-from-db() {
+#   local PWD=`pwd`
+#   local 
+#   docker run -v "$PWD/schema:/output" --net="host" schemaspy/schemaspy:snapshot \
+#            -t <DB種類> -host <DBホスト名/IP>:<ポート> -db <DB名> -u <DBユーザー名> -p <DBパスワード>
+# }
 
 # redmineの操作をpecoって選ぶ
 # 操作の選択はcase文
