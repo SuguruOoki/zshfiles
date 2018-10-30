@@ -515,12 +515,12 @@ peco-mdfind-cd() {
 }
 
 zmodload zsh/terminfo zsh/system
-color_stderr() {
-  while sysread std_err_color; do
-    syswrite -o 2 "${fg_bold[red]}${std_err_color}${terminfo[sgr0]}"
-  done
-}
-exec 2> >(color_stderr)
+# color_stderr() {
+#   while sysread std_err_color; do
+#     syswrite -o 2 "${fg_bold[red]}${std_err_color}${terminfo[sgr0]}"
+#   done
+# }
+# exec 2> >(color_stderr)
 
 # ファイルの読み込みを行うためのfunction
 function loadlib() {
