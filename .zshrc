@@ -28,6 +28,7 @@ alias unittest='docker exec 52143b1a21a2 sh -c "/var/www/html/vendor/phpunit/php
 alias ldup='docker-compose up -d nginx mysql phpmyadmin redis workspace'
 alias selenium-stop="ps aux | grep selenium-server-standalone | grep -v grep |awk {'print \$2'} |xargs kill -9"
 alias selenium-up='java -jar selenium-server-standalone-3.4.0.jar &'
+alias grj='cd $(git remind status -n | fzf)') # これはgit-remindがあることを前提としたコマンド。ない場合はbrewfileでinstallすること
 
 # diffツールを環境によって使い分ける
 if [[ -x `which colordiff` ]]; then
