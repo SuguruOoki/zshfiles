@@ -82,7 +82,6 @@ function daily() {
 	 cd $month;
     fi
 
-
     vim "${day}.md";
     git add -A;
     git commit -m "日報のアップロード ${year}-${month}-${day}";
@@ -178,11 +177,14 @@ function peco-git-cd() {
 }
 
 function alias-change() {
+  local directory=`pwd`
   vim ~/zshfiles/.zshrc;
   source ~/zshfiles/.zshrc;
+  cd ~/zshfiles;
   git add -A;
   git commit;
   git push origin master;
+  cd $directory;
 }
 
 function alias-local-change() {
