@@ -29,7 +29,7 @@ alias ldup='docker-compose up -d nginx mysql phpmyadmin redis workspace'
 alias selenium-stop="ps aux | grep selenium-server-standalone | grep -v grep |awk {'print \$2'} |xargs kill -9"
 alias selenium-up='java -jar selenium-server-standalone-3.4.0.jar &'
 alias grj='cd $(git remind status -n | fzf)' # これはgit-remindがあることを前提としたコマンド。ない場合はbrewfileでinstallすること
-alias read_ssh_password=`~/zshfiles/ssh_password.txt`
+alias read_ssh_password=`cat ~/zshfiles/.ssh_password.txt`
 
 # diffツールを環境によって使い分ける
 if [[ -x `which colordiff` ]]; then
