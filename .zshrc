@@ -24,7 +24,6 @@ alias -g P='`docker ps | tail -n +2 | peco | cut -d" " -f1`'
 alias docker-ssh='docker exec -it P bash'
 alias ch-bash='chsh -s /bin/bash'
 alias server=' php -S localhost:9000'
-alias unittest='docker exec 52143b1a21a2 sh -c "/var/www/html/vendor/phpunit/phpunit/phpunit --configuration /var/www/html/tests/phpunit.xml"'
 alias ldup='docker-compose up -d nginx mysql phpmyadmin redis workspace'
 alias selenium-stop="ps aux | grep selenium-server-standalone | grep -v grep |awk {'print \$2'} |xargs kill -9"
 alias selenium-up='java -jar selenium-server-standalone-3.4.0.jar &'
