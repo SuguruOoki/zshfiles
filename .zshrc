@@ -214,6 +214,7 @@ alias enote='open -n -a "Google Chrome.app" --args --app="https://www.evernote.c
 alias myer='open -n -a "Google Chrome.app" --args --app="https://dev.mysql.com/doc/refman/5.6/ja/error-messages-server.html"'
 alias checklist='open -n -a "Google Chrome.app" --args --app="https://qiita.com/SuguruOoki/private/65184ab64a8ae0cf9b86"'
 alias vim-tips='open -n -a "Google Chrome.app" --args --app="https://qiita.com/SuguruOoki/private/65184ab64a8ae0cf9b86"'
+alias 1on1='open -n -a "Google Chrome.app" --args --app="https://github.com/SuguruOoki/daily-report/wiki/1on1-%E3%81%BE%E3%81%A8%E3%82%81"'
 
 
 # git系
