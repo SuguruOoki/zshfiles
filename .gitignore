@@ -3,3 +3,5 @@ todo-list.txt
 ne-knowledge.txt
 .mysql_setting.txt
 .ssh_password.txt
+*client_secret.json
+*credential.json
