@@ -59,6 +59,7 @@ function git-checkout-remote() {
   fi
 }
 
+# atomでdailyコマンドを打つと良い感じになるはず。
 function daily() {
     local current_directory=`pwd`;
     local year=`date +%Y`;
@@ -82,7 +83,7 @@ function daily() {
 	 cd $month;
     fi
 
-    vim "${day}.md";
+    atom "${day}.md";
     git add -A;
     git commit -m "日報のアップロード ${year}-${month}-${day}";
     git push origin master;
