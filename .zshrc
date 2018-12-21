@@ -536,6 +536,7 @@ function loadlib() {
 }
 
 loadlib ~/zshfiles/.zsh-local
+loadlib ~/zshfiles/hard_controller/wifi_restart.sh
 
 # Add colors to Terminal
 export CLICOLOR=1
