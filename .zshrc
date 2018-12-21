@@ -37,6 +37,13 @@ else
   alias diff='diff'
 fi
 
+# HomeBrewの brew コマンドをラップして、
+# brew install した時にbrew fileのコマンドが
+# 動作するように変更
+if [ -f $(brew --prefix)/etc/brew-wrap ];then
+  source $(brew --prefix)/etc/brew-wrap
+fi
+
 # PATHの設定
 export PATH=$PATH:/usr/local/mysql/bin
 export PATH=$HOME/.nodebrew/current/bin:$PATH
