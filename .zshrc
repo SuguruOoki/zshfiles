@@ -179,7 +179,7 @@ function peco-git-cd() {
 
 function alias-change() {
   local directory=`pwd`
-  atom ~/zshfiles/.zshrc;
+  vim ~/zshfiles/.zshrc;
   source ~/zshfiles/.zshrc;
   cd ~/zshfiles;
   git add -A;
