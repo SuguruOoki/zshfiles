@@ -90,7 +90,7 @@ function daily() {
 	 cd $month;
     fi
 
-    atom "${day}.md";
+    atom "~/daily-report/${year}/${month}/${day}.md";
     git add -A;
     git commit -m "日報のアップロード ${year}-${month}-${day}";
     git push origin master;
