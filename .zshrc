@@ -240,23 +240,26 @@ alias 1on1='open -n -a "Google Chrome.app" --args --app="https://github.com/Sugu
 # git系
 alias gcb='git checkout -b'
 alias gf='git fetch --all'
-alias gc='git checkout $(git branch | sed -e "/*/d" | peco)'
 alias gcr='git-checkout-remote'
 alias gme='git commit --amend --no-edit'
 alias gul='git pull origin'
 alias gsh='git push origin'
 alias gst='git status'
-alias gsp='git stash list | peco | cut -d ":" -f 1 | git stash pop'
 alias gadd='git add .'
 alias gf="git fetch --all"
 alias glp='git log -p'
-alias gp='~/zshfiles/git_controller/git-padd.sh'
-alias gdel='~/zshfiles/git_controller/git-pchk.sh'
 alias gun='git reset HEAD'
 alias gaw="git diff -w --no-color | git apply --cached"
 alias us="git checkout HEAD"
 alias graph='git log --graph'
 alias gds='git log --diff-filter=D --summary'
+
+# git系でpecoを使った選択系のコマンド
+alias gc='git checkout $(git branch | sed -e "/*/d" | peco)'
+alias gdel='~/zshfiles/git_controller/git-pchk.sh'
+alias gp='~/zshfiles/git_controller/git-padd.sh'
+alias gsp='git stash list | peco | cut -d ":" -f 1 | git stash pop'
+alias gcf='git diff --name-only | peco | xargs git checkout' # gitのファイルの差分を削除する
 
 # vim系
 alias cvim='vim ~/vimfiles/.vimrc'
