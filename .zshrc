@@ -90,6 +90,7 @@ function daily() {
 	 cd $month;
     fi
 
+    atom "~/daily-report";
     atom "~/daily-report/${year}/${month}/${day}.md";
     git add -A;
     git commit -m "日報のアップロード ${year}-${month}-${day}";
@@ -245,6 +246,7 @@ alias gme='git commit --amend --no-edit'
 alias gul='git pull origin'
 alias gsh='git push origin'
 alias gst='git status'
+alias gsp='git stash list | peco | cut -d ":" -f 1 | git stash pop'
 alias gadd='git add .'
 alias gf="git fetch --all"
 alias glp='git log -p'
@@ -706,3 +708,6 @@ function hanten() {
 # 踏み台サーバーからredmineAPIを叩きにいく
 
 # 該当のメソッドを持つファイルの一覧の中からさらにrequireしているファイルを探し出す。
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
