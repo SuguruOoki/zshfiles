@@ -1,5 +1,10 @@
 export EDITOR=vim
 
+# コマンドを整えるためのコマンド
+alias ali='alias-change'
+alias alil='alias-local-change'
+alias ch-bash='chsh -s /bin/bash'
+
 # コマンド系
 alias sshh='peco-sshconfig-ssh'
 alias vcd="peco-vagrant-cd"
@@ -7,28 +12,31 @@ alias findcd="peco-find-cd"
 alias gd="peco-git-cd"
 alias ph="peco-select-history"
 alias nkfg="nkf --guess"
-alias ali='alias-change'
-alias alil='alias-local-change'
 alias ll="ls -l"
 alias la="ls -a"
 alias ad='cd $HOME/"$(cat ~/actives.txt | peco)"'
 alias sou="source"
 alias mvim="_peco_mdfind"
 alias ctags="`brew --prefix`/bin/ctags"
+alias server=' php -S localhost:9000'
+
+# selemium 系コマンド
+alias selenium-stop="ps aux | grep selenium-server-standalone | grep -v grep |awk {'print \$2'} |xargs kill -9"
+alias selenium-up='java -jar selenium-server-standalone-3.4.0.jar &'
+
+alias read_ssh_password='cat ~/zshfiles/.ssh_password.txt'
+
+# vagrant 系のコマンド
 alias vgs="vagrant global-status -a"
 alias vpu="vagrant ssh -c ./phpunit.sh"
+
+# docker 系コマンド
 alias pcdd="peco-docker-cd"
 alias pcd="peco-docker-compose-cd"
 alias dc="docker-compose"
 alias -g P='`docker ps | tail -n +2 | peco | cut -d" " -f1`'
 alias docker-ssh='docker exec -it P bash'
-alias ch-bash='chsh -s /bin/bash'
-alias server=' php -S localhost:9000'
 alias ldup='docker-compose up -d nginx mysql phpmyadmin redis workspace'
-alias selenium-stop="ps aux | grep selenium-server-standalone | grep -v grep |awk {'print \$2'} |xargs kill -9"
-alias selenium-up='java -jar selenium-server-standalone-3.4.0.jar &'
-alias grj='cd $(git remind status -n | fzf)' # これはgit-remindがあることを前提としたコマンド。ない場合はbrewfileでinstallすること
-alias read_ssh_password='cat ~/zshfiles/.ssh_password.txt'
 
 # diffツールを環境によって使い分ける
 if [[ -x `which colordiff` ]]; then
@@ -253,6 +261,7 @@ alias gaw="git diff -w --no-color | git apply --cached"
 alias us="git checkout HEAD"
 alias graph='git log --graph'
 alias gds='git log --diff-filter=D --summary'
+alias grj='cd $(git remind status -n | fzf)' # これはgit-remindがあることを前提としたコマンド。ない場合はbrewfileでinstallすること
 
 # git系でpecoを使った選択系のコマンド
 alias gc='git checkout $(git branch | sed -e "/*/d" | peco)'

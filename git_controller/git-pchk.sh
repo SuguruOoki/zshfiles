@@ -1,3 +1,4 @@
+# git のaddしている中身を削除するために使用している
 SELECTED_FILE_TO_ADD="$(git status --porcelain | \
                             sed '/^[A|UU|M]/d' | \
                             peco | \
