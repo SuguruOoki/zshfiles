@@ -98,7 +98,6 @@ function daily() {
 	 cd $month;
     fi
 
-    # atom "~/daily-report";
     vim "~/daily-report/${year}/${month}/${day}.md";
     git add -A;
     git commit -m "日報のアップロード ${year}-${month}-${day}";
@@ -723,3 +722,7 @@ function hanten() {
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# 調査用コマンドまとめ
+
+alias du_folder_top_ten= 'du | sort -gr | head -10'
+alias du_file_top_ten='ls -l | sort -k 5.5gr | head -10'
