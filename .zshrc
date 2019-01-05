@@ -86,19 +86,17 @@ function daily() {
 
     if [ ! -e "~/daily-report/${year}" ]; then
 	 mkdir $year;
-	 cd $year;
-    else
-	 cd $year;
+         chmod 755 $year;
     fi
+    cd $year;
 
     if [ ! -e "~/daily-report/${year}/${month}" ]; then
 	 mkdir $month;
-	 cd $month;
-    else
-	 cd $month;
+         chmod 755 $month;
     fi
 
-    vim "~/daily-report/${year}/${month}/${day}.md";
+    cd $month;
+    vim "${day}.md";
     git add -A;
     git commit -m "日報のアップロード ${year}-${month}-${day}";
     git push origin master;
