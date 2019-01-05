@@ -85,17 +85,22 @@ function daily() {
     git pull origin master;
 
     if [ ! -e "~/daily-report/${year}" ]; then
-	 mkdir $year;
+         mkdir $year;
          chmod 755 $year;
     fi
     cd $year;
 
     if [ ! -e "~/daily-report/${year}/${month}" ]; then
-	 mkdir $month;
+         mkdir $month;
          chmod 755 $month;
     fi
 
     cd $month;
+    if [ ! -e "~/daily-report/${year}/${month}/${day}.md" ]; then
+         touch "${day}.md";
+         chmod 755 "${day}.md";
+    fi
+
     vim "${day}.md";
     git add -A;
     git commit -m "日報のアップロード ${year}-${month}-${day}";
