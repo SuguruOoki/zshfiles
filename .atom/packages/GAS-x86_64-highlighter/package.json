@@ -1,0 +1,40 @@
+{
+  "_from": "https://www.atom.io/api/packages/gas-x86_64-highlighter/versions/0.3.7/tarball",
+  "_id": "GAS-x86_64-highlighter@0.3.7",
+  "_inBundle": false,
+  "_integrity": "sha512-EP8JSyEoutHfbeQUg/5kNYQU8Zpc7L6DwBbqp5HwNNmXZgfg2cjcG81iDGS5WhxqtSAPzWoyI80cP1ctgvGa6g==",
+  "_location": "/GAS-x86_64-highlighter",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/gas-x86_64-highlighter/versions/0.3.7/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/gas-x86_64-highlighter/versions/0.3.7/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/gas-x86_64-highlighter/versions/0.3.7/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/gas-x86_64-highlighter/versions/0.3.7/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/gas-x86_64-highlighter/versions/0.3.7/tarball",
+  "_shasum": "5b2d146ca13f911713faaf7d659c54cc9fc9af05",
+  "_spec": "https://www.atom.io/api/packages/gas-x86_64-highlighter/versions/0.3.7/tarball",
+  "_where": "/private/tmp/apm-install-dir-119014-2972-19p9bs0.f25x",
+  "bugs": {
+    "url": "https://github.com/calculuswhiz/atom-GAS-x86_64-highlighter/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "This is the greatest assembly language of All Time",
+  "engines": {
+    "atom": "*"
+  },
+  "homepage": "https://github.com/calculuswhiz/atom-GAS-x86_64-highlighter#readme",
+  "license": "MIT",
+  "name": "GAS-x86_64-highlighter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calculuswhiz/atom-GAS-x86_64-highlighter.git"
+  },
+  "version": "0.3.7"
+}

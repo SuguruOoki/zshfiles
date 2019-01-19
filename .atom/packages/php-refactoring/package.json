@@ -1,0 +1,61 @@
+{
+  "_from": "https://www.atom.io/api/packages/php-refactoring/versions/1.4.0/tarball",
+  "_id": "php-refactoring@1.4.0",
+  "_inBundle": false,
+  "_integrity": "sha512-Xjl0ETBE6BRp58hOlQmMA0EaHVCyfFrZcKpFUUhxvCtzFh+NQsRkUitP3QjXxyouQwYuryYGi/lf0WXqfoeHdg==",
+  "_location": "/php-refactoring",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/php-refactoring/versions/1.4.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/php-refactoring/versions/1.4.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/php-refactoring/versions/1.4.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/php-refactoring/versions/1.4.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/php-refactoring/versions/1.4.0/tarball",
+  "_shasum": "bbbef5de591e7ebc59ff0c0fcefad838e6f68e1e",
+  "_spec": "https://www.atom.io/api/packages/php-refactoring/versions/1.4.0/tarball",
+  "_where": "/private/var/folders/2c/dnzw54sd68x1m4qynty3jyxm0000gp/T/apm-install-dir-118116-10544-1mph220.z6y1",
+  "activationCommands": {
+    "atom-text-editor": [
+      "php-refactoring:extract",
+      "php-refactoring:rename-variable",
+      "php-refactoring:convert-variable",
+      "php-refactoring:optimize"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/mihaliak/php-refactoring/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "atom-space-pen-views": "^2.0.0"
+  },
+  "deprecated": false,
+  "description": "PHP Refactoring Browser implementation for atom.",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/mihaliak/php-refactoring#readme",
+  "keywords": [
+    "php",
+    "refactoring",
+    "extract",
+    "method",
+    "convert",
+    "optimize",
+    "variable"
+  ],
+  "license": "MIT",
+  "main": "./lib/php-refactoring",
+  "name": "php-refactoring",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mihaliak/php-refactoring.git"
+  },
+  "version": "1.4.0"
+}
