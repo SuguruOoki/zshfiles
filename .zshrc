@@ -712,6 +712,15 @@ function agx() {
    ag $1 $2 | tr "\t" "    " | awk '{sub(/:/,"\t"); print $0 }' | awk '{sub(/:/,"\t"); print $0 }' | pbcopy
 }
 
+
+# handy keybindings
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+bindkey "^R" history-incremental-search-backward
+bindkey "^P" history-search-backward
+bindkey "^Y" accept-and-hold
+bindkey "^N" insert-last-word
+
 # SchemaSpyを使ってer図を作成する。
 # 基本の引数をmysqlに合わせて作成するものとし、
 # 他のことについては適宜作成するものとする。
