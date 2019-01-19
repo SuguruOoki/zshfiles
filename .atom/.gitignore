@@ -6,5 +6,5 @@ storage
 .node-gyp
 .npm
 recovery/
-split-diff/split-diff/*
+split-diff/
 data-atom-connections.cson
