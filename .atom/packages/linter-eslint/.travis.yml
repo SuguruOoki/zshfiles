@@ -1,0 +1,59 @@
+### Project specific config ###
+language: node_js
+node_js: lts/*
+install: skip
+os: linux
+
+jobs:
+  include:
+    # Test Atom versions
+    - stage: test
+      env: ATOM_CHANNEL=stable
+      after_script:
+        # The Atom CI script doesn't support having ESLint as a direct dependency,
+        # as such it doesn't run linting automatically for us.
+        - npm run lint
+    - stage: test
+      env: ATOM_CHANNEL=beta
+
+    # Check the commit messages and run the extra lint script
+    - stage: test
+      install:
+        - npm install
+      before_script: skip
+      script:
+        - commitlint-travis
+
+### Generic setup follows ###
+script:
+  - curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
+  - chmod u+x build-package.sh
+  - "./build-package.sh"
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+branches:
+  only:
+    - master
+    - "/^greenkeeper/.*$/"
+
+git:
+  depth: 10
+
+dist: trusty
+
+sudo: false
+
+addons:
+  apt:
+    packages:
+    - build-essential
+    - git
+    - libgnome-keyring-dev
+    - fakeroot
+
+stages:
+  - test
