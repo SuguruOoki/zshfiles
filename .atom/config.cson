@@ -258,7 +258,6 @@
     short_primitives: true
     spacer_between_sections: "after_description"
   editor:
-    fontSize: 11
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
