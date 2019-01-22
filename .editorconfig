@@ -13,8 +13,8 @@ indent_size = 4
 
 # HTML-Files LESS-Files SASS-Files CSS-Files JS-Files JSON-Files
 [{*.html,*.less,*.sass,*.css,*.js,*.json}]
-indent_style = tab
-indent_size = 4
+indent_style = space
+indent_size = 2 
 
 [*.sql]
 indent_style = space
