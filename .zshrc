@@ -721,6 +721,11 @@ bindkey "^P" history-search-backward
 bindkey "^Y" accept-and-hold
 bindkey "^N" insert-last-word
 
+# Wifiを接続するためのコマンドたち
+# 過去に接続したことのあるwifiのリストを取得する
+alias wifi_list='networksetup -listpreferredwirelessnetworks en0'
+# wifiを接続するためのコマンドairportを有効にするエイリアス
+alias "airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
 # SchemaSpyを使ってer図を作成する。
 # 基本の引数をmysqlに合わせて作成するものとし、
 # 他のことについては適宜作成するものとする。

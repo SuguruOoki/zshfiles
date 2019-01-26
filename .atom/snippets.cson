@@ -54,7 +54,9 @@
   'is… function':
     'prefix': 'is'
     'body': '${1:public} function is${2:sample}(${3:Type} $${4:sample} = ${5:null}) {\n\tif ($${6:sample}) {\n\t}$${6:sample};$0\n}'
-
+  #'unittest private':
+  #    'prefix': 'private unit'
+  #    'body': '${1:public} function testMakeDirectoryIfSpecifiedUpToSecondArgument($params, $expectedResult)\n{\n    $this->callMethod('ne_file', 'makeDirectory', array($params['path'], $params['permission']));\n    \n    $actualResult = array(\n        'path'       => file_exists($params['path']),\n        // 8進数にフォーマットしている\n        'permission' => decoct(fileperms($params['path']) & 0777)\n    );\n    \n    $this->assertSame($expectedResult, $actualResult);\n}\n'
   # define class property
   'const …':
     'prefix': 'const'
