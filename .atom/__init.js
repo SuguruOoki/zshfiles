@@ -29,9 +29,9 @@ function getActivePath() {
 }
 
 function getActiveDirectory() {
-  // {GitRepository} = require 'atom';
-  // git = atom.project.getRepositories()[0];
-  // atom.notifications.addSuccess(path);
+  {GitRepository} = require 'atom';
+  git = atom.project.getRepositories()[0];
+  atom.notifications.addSuccess(path);
   // ::getPath();
 }
 
