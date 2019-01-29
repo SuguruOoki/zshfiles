@@ -1,0 +1,6 @@
+# Check whether var_dump is included before committing
+VAR=$(git diff --cached | grep -w "var_dump")
+if [ ! -z "$VAR" ]; then
+  echo "You've left a var_dump in one of your files! Aborting commit..."
+  exit 1
+fi

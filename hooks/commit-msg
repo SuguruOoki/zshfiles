@@ -1,0 +1,11 @@
+#!/bin/sh
+
+first=(`cat $1 | sed 's/\\n/ /'`)
+# NOTE: for redmine
+echo $first | grep -e 'refs' > /dev/null
+if [ $? -ne 0 ]; then
+    exit 0
+fi
+
+echo "コミットメッセージが入力されていません"
+exit 1
