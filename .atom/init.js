@@ -30,9 +30,14 @@ function getActivePath() {
 
 function getActiveDirectory() {
   // {GitRepository} = require 'atom';
-  // git = atom.project.getRepositories()[0];
-  // atom.notifications.addSuccess(path);
+  // git = atom.project.getRepositories()[0].getPath();
+  // console.dir(git);
+  // atom.notifications.addSuccess(git);
   // ::getPath();
+  let sample = atom.workspace.getPaneItems();
+  console.dir(sample[7].element);
+  // console.dir(sample.getTitle());
+
 }
 
 function getFileName() {
