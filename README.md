@@ -48,6 +48,13 @@ iterm2でatom-onedarkを使用したかったので、gitのsubmoduleに入れ�
 
 その環境でのみ利用したいコマンドがある場合(例えば社外秘にしたいパスやパスワードなどの情報が入ったfunctionなど)は.zsh-localというファイルをzshfiles内に用意する。
 
+# git hooksについて
+
+以下のQiitaの記事を参考に設定すること
+
+gitのhookを全リポジトリで共有する
+https://qiita.com/k0kubun/items/5cb8209e3d1854ac2e2e
+
 # 利用ライブラリ
 
 基本: prezto
