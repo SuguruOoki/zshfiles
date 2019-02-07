@@ -271,7 +271,7 @@ alias gdel='~/zshfiles/git_controller/git-pchk.sh'
 alias gp='~/zshfiles/git_controller/git-padd.sh'
 alias gsp='git stash list | peco | cut -d ":" -f 1 | git stash pop'
 alias gcf='git diff --name-only | peco | xargs git checkout' # gitのファイルの差分を削除する
-
+alias gch = "!f() { git --no-pager reflog | awk '$3 == \"checkout:\" && /moving from/ {print $8}' | awk '!a[$0]++' | head | peco | xargs git checkout; }; f"
 # vim系
 alias cvim='vim ~/vimfiles/.vimrc'
 alias sp='open -a "Sequel Pro.app"'
@@ -712,6 +712,11 @@ function agx() {
    ag $1 $2 | tr "\t" "    " | awk '{sub(/:/,"\t"); print $0 }' | awk '{sub(/:/,"\t"); print $0 }' | pbcopy
 }
 
+function hwx() {
+   local search_word=$1
+
+   hw $1 | tr "\t" "    " | awk '{sub(/:/,"\t"); print $0 }' | awk '{sub(/:/,"\t"); print $0 }' | pbcopy
+}
 
 # handy keybindings
 bindkey "^A" beginning-of-line
