@@ -145,7 +145,6 @@
     automaticallyUpdate: false
     closeDeletedFileTabs: true
     disabledPackages: [
-      "minimap"
       "minimap-linter"
       "minimap-git-diff"
       "php-debug"
@@ -163,7 +162,6 @@
       "language-python"
       "language-toml"
       "about"
-      "exception-reporting"
       "grammar-selector"
       "language-coffee-script"
       "language-gfm"
@@ -175,7 +173,6 @@
       "language-sass"
       "language-xml"
       "language-yaml"
-      "background-tips"
       "language-text"
       "language-hyperlink"
       "encoding-selector"
@@ -219,6 +216,8 @@
       "status-bar"
       "language-plantuml"
       "plantuml-viewer"
+      "autocomplete-css"
+      "autocomplete-html"
     ]
     followSymlinks: false
     ignoredNames: [
@@ -252,6 +251,7 @@
     short_primitives: true
     spacer_between_sections: "after_description"
   editor:
+    fontSize: 11
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
@@ -299,12 +299,12 @@
     ]
   "linter-ui-default":
     panelHeight: 300
-    showPanel: true
   "merge-conflicts": {}
   minimap:
     displayCodeHighlights: false
-    displayMinimapOnLeft: true
     plugins:
+      bookmarks: true
+      bookmarksDecorationsZIndex: 0
       "git-diff": true
       "git-diffDecorationsZIndex": 0
       linter: true
@@ -329,7 +329,6 @@
     ]
     useLocales: false
   "split-diff":
-    diffWords: true
     ignoreWhitespace: true
     leftEditorColor: "red"
     rightEditorColor: "green"
