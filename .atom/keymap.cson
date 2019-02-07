@@ -64,7 +64,7 @@
     'ctrl-9': 'github:toggle-git-tab-focus'
     'ctrl-shift-9': 'github:toggle-git-tab'
     'ctrl-e': 'find-and-replace:use-selection-as-find-pattern'
-
+    'alt-b': 'bookmarks:toggle-bookmark'
 # autocomplete-plusに利用する
 'atom-text-editor.autocomplete-active':
     'tab': 'unset!'
