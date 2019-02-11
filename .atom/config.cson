@@ -251,7 +251,7 @@
     short_primitives: true
     spacer_between_sections: "after_description"
   editor:
-    fontSize: 11
+    fontSize: 12
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
@@ -261,7 +261,7 @@
   "exception-reporting":
     userId: "1fc013d5-f8b5-481c-bdce-b569a8d22d91"
   "git-blame":
-    columnWidth: 202
+    columnWidth: 231
   "git-plus":
     diffs:
       useSplitDiff: true
