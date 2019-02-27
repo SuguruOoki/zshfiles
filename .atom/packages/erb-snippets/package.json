@@ -1,0 +1,53 @@
+{
+  "_from": "https://www.atom.io/api/packages/erb-snippets/versions/1.1.0/tarball",
+  "_id": "erb-snippets@1.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-ew9w6aUq0R4PvDG3KUldPJR9TL6H/y6ExGJ8+Wtojv8uVKWGDkW1SrftCqe5ZNvHz+vnTByB6FX8hVgaoUycDg==",
+  "_location": "/erb-snippets",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/erb-snippets/versions/1.1.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/erb-snippets/versions/1.1.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/erb-snippets/versions/1.1.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/erb-snippets/versions/1.1.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/erb-snippets/versions/1.1.0/tarball",
+  "_shasum": "08c3e3df228313306478d69ca8a86875f307bc63",
+  "_spec": "https://www.atom.io/api/packages/erb-snippets/versions/1.1.0/tarball",
+  "_where": "/private/var/folders/2c/dnzw54sd68x1m4qynty3jyxm0000gp/T/apm-install-dir-119125-10390-4kha9b.ip065",
+  "activationCommands": {
+    "atom-workspace": "erb-snippets:erb_tags"
+  },
+  "bugs": {
+    "url": "https://github.com/MartinPeverelli/erb-snippets/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "underscore-plus": "1.x"
+  },
+  "deprecated": false,
+  "description": "Useful snippets and hotkeys for ERB templates.",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/MartinPeverelli/erb-snippets#readme",
+  "keywords": [
+    "erb",
+    "snippets",
+    "hotkeys",
+    "templates"
+  ],
+  "license": "MIT",
+  "main": "./lib/erb-snippets",
+  "name": "erb-snippets",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinPeverelli/erb-snippets.git"
+  },
+  "version": "1.1.0"
+}
