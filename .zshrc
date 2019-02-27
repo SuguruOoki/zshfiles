@@ -279,7 +279,7 @@ alias sp='open -a "Sequel Pro.app"'
 alias log="tailmainfunctionsystemlog"
 alias veco='~/.vim/ctrlp-veco/bin/veco'
 
-alias cyclic = 'sh ~/zshfiles/cyclic_complexity.sh'
+# alias cyclic = 'sh ~/zshfiles/cyclic_complexity.sh'
 # ここまで個人で作成したコマンド
 
 #

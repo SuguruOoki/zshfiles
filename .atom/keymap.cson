@@ -36,7 +36,7 @@
 
 'atom-text-editor':
     'ctrl-i': 'editor:auto-indent'
-    #'ctrl-f': 'code-search:toggle'
+    'ctrl-shift-f': 'code-search:toggle'
     # 'ctrl-]': 'symbols-view:go-to-declaration'
     # 'ctrl-]': 'symbols-tree-view:toggle'
     'ctrl-t': 'symbols-view:return-from-declaration'

@@ -134,6 +134,7 @@
   "atom-fuzzy-grep":
     detectGitProjectAndUseGitGrep: false
     gitGrepCommandString: "ag"
+  "atom-linter-phpstan": {}
   "atom-phpunit":
     failuresAsNotifications: true
     phpunitPath: "/Users/oki.suguru/dev-environment/core/tests/unit/phpunit.xml"
@@ -155,7 +156,6 @@
       "language-clojure"
       "language-csharp"
       "language-go"
-      "language-java"
       "language-make"
       "language-mustache"
       "language-perl"
@@ -173,8 +173,6 @@
       "language-sass"
       "language-xml"
       "language-yaml"
-      "language-text"
-      "language-hyperlink"
       "encoding-selector"
       "dev-live-reload"
       "autocomplete-paths"
@@ -187,10 +185,8 @@
       "linter-jshint"
       "linter-htmlhint"
       "symbols-view"
-      "emmet"
       "highlight-selected"
       "htmlhint"
-      "atom-linter-phpstan"
       "laravel"
       "laravel-snippets"
       "php-unit-integrator"
@@ -218,6 +214,8 @@
       "plantuml-viewer"
       "autocomplete-css"
       "autocomplete-html"
+      "emmet"
+      "atom-codesearch"
     ]
     followSymlinks: false
     ignoredNames: [
@@ -232,7 +230,9 @@
       "ctags"
       ".atom-redmine"
     ]
-    packagesWithKeymapsDisabled: []
+    packagesWithKeymapsDisabled: [
+      "atom-codesearch"
+    ]
     projectHome: "/Users/oki.suguru/workplace"
     telemetryConsent: "limited"
     themes: [
@@ -261,7 +261,7 @@
   "exception-reporting":
     userId: "1fc013d5-f8b5-481c-bdce-b569a8d22d91"
   "git-blame":
-    columnWidth: 231
+    columnWidth: 258
   "git-plus":
     diffs:
       useSplitDiff: true
@@ -352,7 +352,8 @@
       "txt"
     ]
     tableEditor: {}
-  "tree-view": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
   "tree-view-git-branch": {}
   "vim-mode-plus":
     ignoreCaseForSearch: true
