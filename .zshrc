@@ -200,18 +200,7 @@ function alias-change() {
   vim ~/zshfiles/.zshrc;
   source ~/zshfiles/.zshrc;
   cd ~/zshfiles;
-  git add -A;
-  git commit;
-  git push origin master;
-  cd $directory;
-}
-
-function atom-alias-change() {
-  local directory=`pwd`
-  atom ~/zshfiles/.zshrc;
-  source ~/zshfiles/.zshrc;
-  cd ~/zshfiles;
-  git add -A;
+  git add .zshrc;
   git commit;
   git push origin master;
   cd $directory;
@@ -766,8 +755,8 @@ alias du_file_top_ten='ls -l | sort -k 5.5gr | head -10'
 # zsh-localで設定し、その設定が適用されている前提で、
 # このコマンドを利用することとする。
 function gcre() {
-    yourid   = "SuguruOoki"
-    yourpass = $GIT_HUB_PASSWORD
+    local yourid   = "SuguruOoki"
+    local yourpass = $GIT_HUB_PASSWORD
     git init && git add -A && git status;
     read -p "type repo name        : " name;
     read -p "type repo description : " description;
