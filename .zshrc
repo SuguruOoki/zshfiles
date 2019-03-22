@@ -760,3 +760,24 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 alias du_folder_top_ten= 'du | sort -gr | head -10'
 alias du_file_top_ten='ls -l | sort -k 5.5gr | head -10'
+
+# githubにリポジトリを作成するコマンド
+# パスワードについては、環境変数 GIT_HUB_PASSWORD を
+# zsh-localで設定し、その設定が適用されている前提で、
+# このコマンドを利用することとする。
+function gcre() {
+    yourid   = "SuguruOoki"
+    yourpass = $GIT_HUB_PASSWORD
+    git init && git add -A && git status;
+    read -p "type repo name        : " name;
+    read -p "type repo description : " description;
+
+    # github
+    curl -u ${yourid} https://api.github.com/user/repos -d '{"name":"'"${name}"'","description":"'"${description}"'","private":true}';
+    git commit -m "first commit";
+    git remote add origin https://github.com/${yourid}/${name}.git;
+    git remote set-url origin git@github.com:${yourid}/${name}.git;
+    git push --set-upstream origin master;
+    # bitbucketならこうする。
+    ## curl -X POST --user ${yourid}:${yourpass} https://api.bitbucket.org/2.0/repositories/${yourid}/${name} --data '{"is_private":true}'
+}
