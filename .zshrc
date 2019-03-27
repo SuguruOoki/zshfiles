@@ -1,5 +1,8 @@
 export EDITOR=vim
 
+# rubyをrbenvのものに切り替える
+export PATH=/usr/local/bin:$PATH
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # コマンドを整えるためのコマンド
 alias ali='alias-change'
 alias alil='alias-local-change'
