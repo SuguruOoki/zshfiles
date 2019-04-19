@@ -38,7 +38,7 @@ alias pcdd="peco-docker-cd"
 alias pcd="peco-docker-compose-cd"
 alias dc="docker-compose"
 alias -g P='`docker ps | tail -n +2 | peco | cut -d" " -f1`'
-alias docker-ssh='docker exec -it P bash'
+# alias docker-ssh='docker exec -it P bash'
 alias ldup='docker-compose up -d nginx mysql phpmyadmin redis workspace'
 
 # diffツールを環境によって使い分ける
@@ -188,6 +188,14 @@ function peco-docker-cd() {
 function peco-docker-compose-cd() {
   peco-mdfind-cd "docker-compose.yml";
  }
+
+function docker-ssh2() {
+  # docker exec -it P bash
+  alpine_flg=`docker ps | tail -n +2 | peco | cut -d" "  -f9`
+  if [ "`echo $alpine_flg | grep 'alpine'`" ]; then
+    echo "含まれる"
+  fi
+}
 
 
 function peco-vagrant-cd() {
