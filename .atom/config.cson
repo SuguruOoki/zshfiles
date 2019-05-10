@@ -1,4 +1,6 @@
 "*":
+  Hydrogen:
+    statusBarDisable: true
   _dart:
     _firstRun: true
     _version: "1.0.1"
@@ -145,6 +147,7 @@
   core:
     automaticallyUpdate: false
     closeDeletedFileTabs: true
+    debugLSP: true
     disabledPackages: [
       "minimap-linter"
       "minimap-git-diff"
@@ -159,7 +162,6 @@
       "language-make"
       "language-mustache"
       "language-perl"
-      "language-python"
       "language-toml"
       "about"
       "grammar-selector"
@@ -172,7 +174,6 @@
       "bookmarks"
       "language-sass"
       "language-xml"
-      "language-yaml"
       "encoding-selector"
       "dev-live-reload"
       "autocomplete-paths"
@@ -188,14 +189,10 @@
       "highlight-selected"
       "htmlhint"
       "laravel"
-      "laravel-snippets"
       "php-unit-integrator"
       "spl-file-templates"
-      "image-view"
       "atom-mysql-snippets"
       "tablr"
-      "language-css"
-      "editor-stats"
       "dart"
       "atom-typescript"
       "regex-railroad-diagram"
@@ -203,20 +200,38 @@
       "ide-typescript"
       "spell-check"
       "atom-autocomplete-php"
-      "autocomplete-gas"
       "GAS-x86_64-highlighter"
       "open-on-github"
       "sync-settings"
       "linter-eslint"
-      "merge-conflicts"
       "status-bar"
-      "language-plantuml"
-      "plantuml-viewer"
       "autocomplete-css"
       "autocomplete-html"
       "emmet"
       "atom-codesearch"
+      "atom-commit-templates"
+      "atom-ide-ui"
+      "linter-php"
+      "language-java"
+      "plantuml-viewer"
+      "language-plantuml"
+      "plantuml"
+      "atom-vue"
+      "atom-vue-router"
+      "vue-autocomplete"
+      "vuejs-snippets"
+      "minimap"
+      "minimap-bookmarks"
+      "open-git-modified-files"
+      "php-extract-method"
+      "run-command"
+      "snippet-generator-plus"
+      "deprecation-cop"
+      "language-typescript"
+      "click-link"
+      "editor-stats"
     ]
+    excludeVcsIgnoredPaths: false
     followSymlinks: false
     ignoredNames: [
       ".git"
@@ -239,6 +254,7 @@
       "one-light-ui"
       "one-dark-syntax"
     ]
+    useTreeSitterParsers: false
   dart:
     sdkLocation: "/usr/local/opt/dart/libexec"
   "data-atom":
@@ -260,6 +276,8 @@
     tabLength: 4
   "exception-reporting":
     userId: "1fc013d5-f8b5-481c-bdce-b569a8d22d91"
+  "file-templates": {}
+  "find-and-replace": {}
   "git-blame":
     columnWidth: 258
   "git-plus":
@@ -276,6 +294,8 @@
     hideOnNoErrors: true
   "ide-php":
     phpPath: "/usr/local/bin/php"
+  kite:
+    showWelcomeNotificationOnStartup: false
   "linter-htmlhint":
     enabledScopes: [
       "text.html.angular"
@@ -286,6 +306,7 @@
       "text.php"
       ""
     ]
+  "linter-javac": {}
   "linter-php":
     executablePath: "/usr/local/bin/php"
   "linter-php7cc":
@@ -353,10 +374,14 @@
     ]
     tableEditor: {}
   "tree-view":
-    hideVcsIgnoredFiles: true
+    alwaysOpenExisting: true
+    autoReveal: true
+    hideIgnoredNames: true
   "tree-view-git-branch": {}
   "vim-mode-plus":
     ignoreCaseForSearch: true
+  "web-search":
+    browser: {}
   welcome:
     showOnStartup: false
   whitespace:
@@ -366,5 +391,6 @@
     removeTrailingWhitespace: false
 ".editorconfig.source":
   editor:
-    softWrap: false
+    autoIndent: true
+    softWrap: true
     softWrapAtPreferredLineLength: false

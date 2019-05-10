@@ -1,25 +1,26 @@
 {
-  "_from": "https://www.atom.io/api/packages/editorconfig/versions/2.2.2/tarball",
-  "_id": "editorconfig@2.2.2",
+  "_from": "https://www.atom.io/api/packages/editorconfig/versions/2.4.0/tarball",
+  "_id": "editorconfig@2.4.0",
   "_inBundle": false,
-  "_integrity": "sha512-s2aN6jkqrrxNZlEdFV87/ALAxK7816ehVcqdobPh/Qd6qwHyuadS+rlcEZq47HHOsi4GXcjiOwzRKKAHtzuGOg==",
+  "_integrity": "sha512-yKt/vWHEH5jBD9dh+u9H6JscAyUAt4KaDC/bSTjKz+9Hs3WFSx5Cr/ACddVXxCFCtdZXMzp9Hme1nnQWkEr7yw==",
   "_location": "/editorconfig",
   "_phantomChildren": {},
   "_requested": {
     "type": "remote",
-    "raw": "https://www.atom.io/api/packages/editorconfig/versions/2.2.2/tarball",
-    "rawSpec": "https://www.atom.io/api/packages/editorconfig/versions/2.2.2/tarball",
-    "saveSpec": "https://www.atom.io/api/packages/editorconfig/versions/2.2.2/tarball",
-    "fetchSpec": "https://www.atom.io/api/packages/editorconfig/versions/2.2.2/tarball"
+    "raw": "https://www.atom.io/api/packages/editorconfig/versions/2.4.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/editorconfig/versions/2.4.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/editorconfig/versions/2.4.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/editorconfig/versions/2.4.0/tarball"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://www.atom.io/api/packages/editorconfig/versions/2.2.2/tarball",
-  "_shasum": "6e3c13162ce72800a0775b8a576754357f9e92df",
-  "_spec": "https://www.atom.io/api/packages/editorconfig/versions/2.2.2/tarball",
-  "_where": "/private/var/folders/2c/dnzw54sd68x1m4qynty3jyxm0000gp/T/apm-install-dir-1181131-30797-bz6vd7.lellm",
+  "_resolved": "https://www.atom.io/api/packages/editorconfig/versions/2.4.0/tarball",
+  "_shasum": "f5a85826581b4df8932f7fd1060175be2130cafd",
+  "_spec": "https://www.atom.io/api/packages/editorconfig/versions/2.4.0/tarball",
+  "_where": "/private/var/folders/2c/dnzw54sd68x1m4qynty3jyxm0000gp/T/apm-install-dir-119324-34048-170cldg.zl5g",
+  "atomTestRunner": "atom-mocha",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
@@ -38,13 +39,15 @@
   },
   "dependencies": {
     "editorconfig": "^0.13.2",
-    "lazy-req": "^1.1.0",
+    "import-lazy": "^2.1.0",
     "pify": "^2.3.0"
   },
   "deprecated": false,
   "description": "Helps developers maintain consistent coding styles between different editors",
   "devDependencies": {
-    "xo": "*"
+    "atom-mocha": "^2.1.0",
+    "mocha-when": "^1.0.0",
+    "xo": "^0.24.0"
   },
   "engines": {
     "atom": ">=1.13.0"
@@ -65,20 +68,42 @@
     "url": "git+https://github.com/sindresorhus/atom-editorconfig.git"
   },
   "scripts": {
-    "test": "xo && apm test"
+    "lint": "npx xo",
+    "test": "apm test"
   },
-  "version": "2.2.2",
+  "version": "2.4.0",
   "xo": {
-    "esnext": true,
     "globals": [
+      "afterEach",
       "atom",
-      "document"
+      "attachToDOM",
+      "before",
+      "beforeEach",
+      "describe",
+      "document",
+      "expect",
+      "it",
+      "when"
     ],
     "ignores": [
       "atom/**"
     ],
     "rules": {
-      "import/prefer-default-export": "off"
+      "import/prefer-default-export": "off",
+      "camelcase": [
+        "error",
+        {
+          "allow": [
+            "end_of_line",
+            "indent_size",
+            "indent_style",
+            "insert_final_newline",
+            "max_line_length",
+            "tab_width",
+            "trim_trailing_whitespace"
+          ]
+        }
+      ]
     }
   }
 }
