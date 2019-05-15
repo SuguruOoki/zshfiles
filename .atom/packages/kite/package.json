@@ -1,25 +1,25 @@
 {
-  "_from": "https://www.atom.io/api/packages/kite/versions/0.156.0/tarball",
-  "_id": "kite@0.156.0",
+  "_from": "https://www.atom.io/api/packages/kite/versions/0.157.0/tarball",
+  "_id": "kite@0.157.0",
   "_inBundle": false,
-  "_integrity": "sha512-fJ/KdXheO0io2Cr7P90vMTTUWBOzIsh4Fd83HLG0l/Y5cQvdnrn+TIJJxijRP/RsH8ebrHk63lL2iFODbI9+mw==",
+  "_integrity": "sha512-BvK5LsyEUGRfFTkdprhRzjOXPWkO68rYKnQhTpf/HaESYXmHbWO4Q6T58Oy3vGaagmcqpw7Zfb4HlZs8fpHGJw==",
   "_location": "/kite",
   "_phantomChildren": {},
   "_requested": {
     "type": "remote",
-    "raw": "https://www.atom.io/api/packages/kite/versions/0.156.0/tarball",
-    "rawSpec": "https://www.atom.io/api/packages/kite/versions/0.156.0/tarball",
-    "saveSpec": "https://www.atom.io/api/packages/kite/versions/0.156.0/tarball",
-    "fetchSpec": "https://www.atom.io/api/packages/kite/versions/0.156.0/tarball"
+    "raw": "https://www.atom.io/api/packages/kite/versions/0.157.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/kite/versions/0.157.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/kite/versions/0.157.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/kite/versions/0.157.0/tarball"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://www.atom.io/api/packages/kite/versions/0.156.0/tarball",
-  "_shasum": "6663d8716d2a56a06a9f52c62947741e91e1562f",
-  "_spec": "https://www.atom.io/api/packages/kite/versions/0.156.0/tarball",
-  "_where": "/private/var/folders/2c/dnzw54sd68x1m4qynty3jyxm0000gp/T/apm-install-dir-11947-45026-1cy6ees.vlrt",
+  "_resolved": "https://www.atom.io/api/packages/kite/versions/0.157.0/tarball",
+  "_shasum": "4773b5fcbd563e80cc2e199536d100e816490f01",
+  "_spec": "https://www.atom.io/api/packages/kite/versions/0.157.0/tarball",
+  "_where": "/private/var/folders/2c/dnzw54sd68x1m4qynty3jyxm0000gp/T/apm-install-dir-119410-42937-1v7o876.if4x",
   "bugs": {
     "url": "https://github.com/kiteco/atom-plugin/issues"
   },
@@ -42,6 +42,12 @@
       "default": true,
       "title": "Enable hover",
       "description": "Show a quick summary of a symbol when you hover your mouse over it."
+    },
+    "enableSnippets": {
+      "type": "boolean",
+      "default": false,
+      "title": "Enable snippets",
+      "description": "Enable snippets feature (Experimental)"
     },
     "maxVisibleSuggestionsAlongSignature": {
       "type": "integer",
@@ -153,9 +159,9 @@
     "url": "git+https://github.com/kiteco/atom-plugin.git"
   },
   "scripts": {
-    "clean-dev-install": "apm unlink && rm -rf node_modules && rm package-lock.json && apm install && apm link",
+    "clean-dev-install": "apm unlink && rm -rf node_modules && rm -f package-lock.json && apm install && apm link",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
-  "version": "0.156.0"
+  "version": "0.157.0"
 }
