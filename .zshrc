@@ -720,6 +720,11 @@ function hwx() {
    hw $1 | tr "\t" "    " | awk '{sub(/:/,"\t"); print $0 }' | awk '{sub(/:/,"\t"); print $0 }' | pbcopy
 }
 
+function gwx() {
+   local search_word=$1
+   git grep -p $1 | tr "\t" "    "  | sed '/function/d' | sed '/class/d' | sed '/\*/d' | awk '{sub(/:/,"\t"); print $0 }' | pbcopy
+}
+
 # handy keybindings
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
@@ -781,3 +786,7 @@ function gcre() {
     # bitbucketならこうする。
     ## curl -X POST --user ${yourid}:${yourpass} https://api.bitbucket.org/2.0/repositories/${yourid}/${name} --data '{"is_private":true}'
 }
+
+# 専門用語を取り出すためのコマンド。termextractのDockerコンテナが起動している前提のコマンド
+alias termextract="docker run -v /var/lib/termextract:/var/lib/termextract \
+  -a stdin -a stdout -a stderr -i naoa/termextract termextract_mecab.pl"
