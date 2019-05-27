@@ -722,7 +722,7 @@ function hwx() {
 
 function gwx() {
    local search_word=$1
-   git grep -p $1 | tr "\t" "    "  | sed '/function/d' | sed '/class/d' | sed '/\*/d' | awk '{sub(/:/,"\t"); print $0 }' | pbcopy
+   git grep -p $1 | tr "\t" "    "  | sed '/function/d' | sed '/class/d' | sed '/\*/d' | awk '{sub(/:/,"\t"); print $0 }' | awk '{sub(/:/,"\t"); print $0 }' | pbcopy
 }
 
 # handy keybindings
