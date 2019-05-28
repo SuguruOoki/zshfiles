@@ -2,6 +2,7 @@ export EDITOR=vim
 
 # rubyをrbenvのものに切り替える
 export PATH=/usr/local/bin:$PATH
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # コマンドを整えるためのコマンド
 alias ali='alias-change'
@@ -760,6 +761,11 @@ alias "airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/C
 # 該当のメソッドを持つファイルの一覧の中からさらにrequireしているファイルを探し出す。
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# gitで差分のあるファイルから一覧をとって実行するコマンド
+
+
+# alias givim = 'git status | grep modified | awk -F\':\' \'{print $2}\' | sed -e "s/ //g" | fzf |vim'
 
 # 調査用コマンドまとめ
 
