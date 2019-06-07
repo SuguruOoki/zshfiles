@@ -718,7 +718,7 @@ function agx() {
 function hwx() {
    local search_word=$1
 
-   hw $1 | tr "\t" "    " | awk '{sub(/:/,"\t"); print $0 }' | awk '{sub(/:/,"\t"); print $0 }' | pbcopy
+   hw -i $1 | tr "\t" "    " | awk '{sub(/:/,"\t"); print $0 }' | awk '{sub(/:/,"\t"); print $0 }' | pbcopy
 }
 
 function gwx() {
