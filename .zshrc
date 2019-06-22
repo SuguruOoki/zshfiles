@@ -573,6 +573,7 @@ function loadlib() {
 }
 
 loadlib ~/zshfiles/.zsh-local
+loadlib ~/zshfiles/gcloud.sh
 loadlib ~/zshfiles/hard_controller/wifi_restart.sh
 
 # Add colors to Terminal
@@ -726,6 +727,7 @@ function gwx() {
    git grep -p $1 | tr "\t" "    "  | sed '/function/d' | sed '/class/d' | sed '/\/\//d' |  sed '/\*/d' | awk '{sub(/:/,"\t"); print $0 }' | awk '{sub(/:/,"\t"); print $0 }' | pbcopy
 }
 
+
 # handy keybindings
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
@@ -796,3 +798,4 @@ function gcre() {
 # 専門用語を取り出すためのコマンド。termextractのDockerコンテナが起動している前提のコマンド
 alias termextract="docker run -v /var/lib/termextract:/var/lib/termextract \
   -a stdin -a stdout -a stderr -i naoa/termextract termextract_mecab.pl"
+
