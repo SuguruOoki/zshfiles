@@ -199,10 +199,6 @@ function peco-docker-compose-cd() {
 # }
 #
 
-function peco-vagrant-cd() {
-  peco-mdfind-cd "Vagrantfile"
-}
-
 function peco-git-cd() {
   peco-find-cd '.git'
 }
@@ -740,7 +736,7 @@ bindkey "^N" insert-last-word
 # 過去に接続したことのあるwifiのリストを取得する
 alias wifi_list='networksetup -listpreferredwirelessnetworks en0'
 # wifiを接続するためのコマンドairportを有効にするエイリアス
-alias "airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
+# alias "airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
 # SchemaSpyを使ってer図を作成する。
 # 基本の引数をmysqlに合わせて作成するものとし、
 # 他のことについては適宜作成するものとする。
@@ -768,8 +764,15 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 
 # alias givim = 'git status | grep modified | awk -F\':\' \'{print $2}\' | sed -e "s/ //g" | fzf |vim'
-alias grvim=`git status | grep modified | awk '{print $2}' | peco | xargs vim`
+alias gv=
 
+function gitvim() {
+   local file=$(git status | grep modified | awk '{print $2}' | peco)
+
+   if [ -f $file ];then
+     vim $file
+   fi
+}
 
 # 調査用コマンドまとめ
 
