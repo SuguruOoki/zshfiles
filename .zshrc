@@ -768,6 +768,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 
 # alias givim = 'git status | grep modified | awk -F\':\' \'{print $2}\' | sed -e "s/ //g" | fzf |vim'
+alias grvim=`git status | grep modified | awk '{print $2}' | peco | xargs vim`
+
 
 # 調査用コマンドまとめ
 
