@@ -5,4 +5,5 @@ ne-knowledge.txt
 .ssh_password.txt
 *client_secret.json
 *credential.json
-./.atom/packages/kite/*
+.atom/packages/kite/*
+.atom/.atom-socket-secret-*
