@@ -230,6 +230,10 @@
       "language-typescript"
       "click-link"
       "editor-stats"
+      "kite"
+      "merge-conflicts"
+      "background-tips"
+      "git-plus"
     ]
     excludeVcsIgnoredPaths: false
     followSymlinks: false
@@ -267,7 +271,6 @@
     short_primitives: true
     spacer_between_sections: "after_description"
   editor:
-    fontSize: 13
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
