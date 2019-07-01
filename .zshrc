@@ -804,3 +804,5 @@ function gcre() {
 alias termextract="docker run -v /var/lib/termextract:/var/lib/termextract \
   -a stdin -a stdout -a stderr -i naoa/termextract termextract_mecab.pl"
 
+# history にコマンド実行時刻を記録する
+HISTTIMEFORMAT='%Y-%m-%dT%T%z '
