@@ -800,6 +800,38 @@ function gcre() {
     ## curl -X POST --user ${yourid}:${yourpass} https://api.bitbucket.org/2.0/repositories/${yourid}/${name} --data '{"is_private":true}'
 }
 
+function fetch() {
+  local branch=`git branch | grep  \* | awk '{print $2}'`
+  local stash_save='0'
+
+  if [ git status | grep 'modified' ]; then
+    echo "修正内容があるため、stashします"
+    git stash
+    $stash_save='1';
+  fi
+
+  if [ $branch != 'master' ]; then
+    git checkout origin master
+  fi
+
+  git fetch --all
+
+  if [ git status | grep 'nothing to commit' > /dev/null]; then
+    echo "最新のcommitが内容なのでpullしません"
+  else
+    echo "最新のcommitが含まれるようなので、commitを取り込みます"
+
+    git pull --rebase origin master
+    git status
+    git checkout origin $branch
+
+    if [ $stash_save = '1']; then
+      git stash pop
+    fi
+  fi
+
+}
+
 # 専門用語を取り出すためのコマンド。termextractのDockerコンテナが起動している前提のコマンド
 alias termextract="docker run -v /var/lib/termextract:/var/lib/termextract \
   -a stdin -a stdout -a stderr -i naoa/termextract termextract_mecab.pl"
