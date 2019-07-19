@@ -127,8 +127,7 @@
     yaml:
       disabled: true
   "atom-codesearch":
-    engine: "ag"
-    opts: "--ignore-dir caches_ux"
+    opts: "--ignore-dir application/caches_ux"
   "atom-ctags":
     GotoSymbolKey: [
       "ctrl"
@@ -200,15 +199,12 @@
       "ide-typescript"
       "spell-check"
       "atom-autocomplete-php"
-      "GAS-x86_64-highlighter"
       "open-on-github"
       "sync-settings"
       "linter-eslint"
-      "status-bar"
       "autocomplete-css"
       "autocomplete-html"
       "emmet"
-      "atom-codesearch"
       "atom-commit-templates"
       "atom-ide-ui"
       "linter-php"
@@ -216,24 +212,28 @@
       "plantuml-viewer"
       "language-plantuml"
       "plantuml"
-      "atom-vue"
       "atom-vue-router"
       "vue-autocomplete"
       "vuejs-snippets"
       "minimap"
       "minimap-bookmarks"
-      "open-git-modified-files"
-      "php-extract-method"
       "run-command"
       "snippet-generator-plus"
       "deprecation-cop"
       "language-typescript"
       "click-link"
       "editor-stats"
-      "kite"
       "merge-conflicts"
-      "background-tips"
       "git-plus"
+      "incremental-search"
+      "Hydrogen"
+      "autosave"
+      "language-python"
+      "language-ruby"
+      "language-ruby-on-rails"
+      "language-rust-bundled"
+      "package-generator"
+      "background-tips"
     ]
     excludeVcsIgnoredPaths: false
     followSymlinks: false
@@ -252,7 +252,7 @@
     packagesWithKeymapsDisabled: [
       "atom-codesearch"
     ]
-    projectHome: "/Users/oki.suguru/workplace"
+    projectHome: "/Users/oki.suguru/workplace/techbowl/"
     telemetryConsent: "limited"
     themes: [
       "one-light-ui"
@@ -271,6 +271,7 @@
     short_primitives: true
     spacer_between_sections: "after_description"
   editor:
+    fontSize: 12
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true

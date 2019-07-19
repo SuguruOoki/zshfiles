@@ -1,25 +1,25 @@
 {
-  "_from": "https://www.atom.io/api/packages/atom-codesearch/versions/1.3.0/tarball",
-  "_id": "atom-codesearch@1.3.0",
+  "_from": "https://www.atom.io/api/packages/atom-codesearch/versions/1.4.0/tarball",
+  "_id": "atom-codesearch@1.4.0",
   "_inBundle": false,
-  "_integrity": "sha512-+cjOsDcqfggsLwBAhczLH/p6HxnfP9Gw9SFKpab17PbtRBKILbjvjSX0GHe0sMKB/K42szt2Una6IASE+hQmdg==",
+  "_integrity": "sha512-eO0sdFJVCu4RetgqTjM11ekoQT8UMJ16e2fLGh/uOpF9Md0598qMCYQa8+iOR8yuv/u/kK1zDsavLIsSdD5A2w==",
   "_location": "/atom-codesearch",
   "_phantomChildren": {},
   "_requested": {
     "type": "remote",
-    "raw": "https://www.atom.io/api/packages/atom-codesearch/versions/1.3.0/tarball",
-    "rawSpec": "https://www.atom.io/api/packages/atom-codesearch/versions/1.3.0/tarball",
-    "saveSpec": "https://www.atom.io/api/packages/atom-codesearch/versions/1.3.0/tarball",
-    "fetchSpec": "https://www.atom.io/api/packages/atom-codesearch/versions/1.3.0/tarball"
+    "raw": "https://www.atom.io/api/packages/atom-codesearch/versions/1.4.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/atom-codesearch/versions/1.4.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/atom-codesearch/versions/1.4.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/atom-codesearch/versions/1.4.0/tarball"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://www.atom.io/api/packages/atom-codesearch/versions/1.3.0/tarball",
-  "_shasum": "ee8ab996e35c631d79ccc36b9ceb6cf4d23e97d3",
-  "_spec": "https://www.atom.io/api/packages/atom-codesearch/versions/1.3.0/tarball",
-  "_where": "/private/var/folders/2c/dnzw54sd68x1m4qynty3jyxm0000gp/T/apm-install-dir-1181019-19553-1cqwp21.fatm",
+  "_resolved": "https://www.atom.io/api/packages/atom-codesearch/versions/1.4.0/tarball",
+  "_shasum": "e88e853a54edd64fda788f4136d9f4096c7bdc4d",
+  "_spec": "https://www.atom.io/api/packages/atom-codesearch/versions/1.4.0/tarball",
+  "_where": "/private/tmp/apm-install-dir-11964-7474-16kqhpr.izkv",
   "activationCommands": {
     "atom-workspace": [
       "code-search:toggle",
@@ -116,5 +116,5 @@
     "type": "git",
     "url": "git+https://github.com/antelle/atom-codesearch.git"
   },
-  "version": "1.3.0"
+  "version": "1.4.0"
 }
