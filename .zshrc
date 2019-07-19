@@ -832,6 +832,12 @@ function fetch() {
 
 }
 
+function docker-image-rm-peco() {
+  local selected_image_id=`docker images | grep -v SIZE | peco | awk '{print $3}'`
+  docker image rm $selected_image_id
+}
+alias dirp=docker-image-rm-peco
+
 # 専門用語を取り出すためのコマンド。termextractのDockerコンテナが起動している前提のコマンド
 alias termextract="docker run -v /var/lib/termextract:/var/lib/termextract \
   -a stdin -a stdout -a stderr -i naoa/termextract termextract_mecab.pl"
