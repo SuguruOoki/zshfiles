@@ -3,6 +3,9 @@ export EDITOR=vim
 # rubyをrbenvのものに切り替える
 export PATH=/usr/local/bin:$PATH
 
+# Dockerのbuild kitを有効にするための環境変数
+export DOCKER_BUILDKIT=1
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # コマンドを整えるためのコマンド
 alias ali='alias-change'
