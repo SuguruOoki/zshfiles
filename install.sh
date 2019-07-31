@@ -14,3 +14,8 @@ ln -nfs ~/zshfiles/.atom ~/.atom
 # 権限を与える系
 
 chmod +x ~/zshfiles/code_analysis/cyclic_complexity.sh
+
+cd ~/
+# ↓をitermの色として設定すると良い。
+git clone https://github.com/anunez/one-dark-iterm.git
+
