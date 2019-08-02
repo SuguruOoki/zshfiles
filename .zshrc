@@ -297,9 +297,15 @@ fi
 # Customize to your needs...
 alias trans='trans -b en:ja'
 alias transj='trans -b ja:en'
+
+# .zshrcに以下追記
+fpath=($HOME/.zsh/anyframe(N-/) $fpath)
+autoload -Uz anyframe-init
+anyframe-init
 fpath=($HOME/zshfiles/anyframe(N-/) $fpath)
 autoload -Uz anyframe-init
 anyframe-init
+
 bindkey '^xb' anyframe-widget-cdr
 bindkey '^x^b' anyframe-widget-checkout-git-branch
 
