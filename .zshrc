@@ -60,7 +60,7 @@ if [ -f $(brew --prefix)/etc/brew-wrap ];then
 fi
 
 # PATHの設定
-export PATH=$PATH:/usr/local/mysql/bin
+# export PATH=$PATH:/usr/local/mysql/bin
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 if [ -f ~/.env ] ; then
@@ -853,3 +853,12 @@ alias termextract="docker run -v /var/lib/termextract:/var/lib/termextract \
 
 # history にコマンド実行時刻を記録する
 HISTTIMEFORMAT='%Y-%m-%dT%T%z '
+# export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+# 
+# ここからはLaravelのためのコマンド
+#
+function create-project() {
+  project_name=$1
+  composer create-project --prefer-dist laravel/laravel $project_name
+}
