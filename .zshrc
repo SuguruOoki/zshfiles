@@ -266,7 +266,8 @@ alias gds='git log --diff-filter=D --summary'
 alias grj='cd $(git remind status -n | fzf)' # これはgit-remindがあることを前提としたコマンド。ない場合はbrewfileでinstallすること
 
 # git系でpecoを使った選択系のコマンド
-alias gc='git checkout $(git branch | sed -e "/*/d" | peco)'
+alias gc='git switch $(git branch | sed -e "/*/d" | peco)'
+# alias gc='git checkout $(git branch | sed -e "/*/d" | peco)'
 alias gdel='~/zshfiles/git_controller/git-pchk.sh'
 alias gp='~/zshfiles/git_controller/git-padd.sh'
 alias gsp='git stash list | peco | cut -d ":" -f 1 | git stash pop'
