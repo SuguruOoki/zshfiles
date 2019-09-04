@@ -1,6 +1,6 @@
 import "@babel/polyfill";
 import { CompositeDisposable, Disposable } from "atom";
-import { OutputViewContainer } from "./views/output-view/container";
+import { TreeViewBranchManager } from "./views/tree-view-branches";
 import git from "./git";
 import configurations from "./config";
 import { initializeContextMenu } from "./context-menu";
@@ -45,6 +45,7 @@ import GitMerge from "./models/git-merge";
 import GitRebase from "./models/git-rebase";
 import GitOpenChangedFiles from "./models/git-open-changed-files";
 import diffGrammars from "./grammars/diff.js";
+import { viewController } from "./views/controller";
 
 const currentFile = repo => {
   const activeEditor = atom.workspace.getActiveTextEditor();
@@ -86,14 +87,6 @@ module.exports = {
   activate(_state) {
     setDiffGrammar();
     const repos = getWorkspaceRepos();
-    if (this.outputView === null) this.outputView = new OutputViewContainer();
-
-    atom.workspace.addOpener(uri => {
-      if (uri === OutputViewContainer.URI) {
-        if (this.outputView.isDestroyed) this.outputView = new OutputViewContainer();
-        return this.outputView;
-      }
-    });
 
     atom.project.onDidChangePaths(_paths => onPathsChanged(this));
 
@@ -154,6 +147,10 @@ module.exports = {
           "git-plus:delete-remote-branch": () => {
             git.getRepo().then(repo => GitDeleteBranch(repo, { remote: true }));
           },
+          "git-plus:delete-branch-local-and-remote": () => {
+            git.getRepo().then(repo => GitDeleteBranch(repo))
+              .then(repo => GitDeleteBranch(repo, { remote: true }));
+          },
           "git-plus:cherry-pick": () => git.getRepo().then(repo => GitCherryPick(repo)),
           "git-plus:diff": () => {
             git.getRepo().then(repo => GitDiff(repo, { file: currentFile(repo) }));
@@ -201,14 +198,13 @@ module.exports = {
             git.getRepo().then(repo => GitOpenChangedFiles(repo));
           },
           "git-plus:toggle-output-view": () => {
-            if (!this.outputView) this.outputView = new OutputViewContainer();
-            this.outputView.toggle();
+            viewController.getOutputView().toggle();
           }
         })
       );
       this.subscriptions.add(
         atom.commands.add("atom-workspace", "git-plus:fetch-all", {
-          displayName: "Fetch All (Repos & Remotes)",
+          displayName: "Git-Plus: Fetch All (Repos & Remotes)",
           didDispatch: _event => gitFetchInAllRepos()
         })
       );
@@ -250,11 +246,7 @@ module.exports = {
   },
 
   deserializeOutputView(_state) {
-    if (!this.outputView) {
-      this.outputView = new OutputViewContainer();
-      return this.outputView;
-    }
-    return null; // there should only be one view so never deserialize more
+    return viewController.getOutputView();
   },
 
   deactivate() {
@@ -288,7 +280,15 @@ module.exports = {
 
   consumeTreeView(treeView) {
     this.treeView = treeView;
-    this.subscriptions.add(new Disposable(() => (this.treeView = null)));
+    this.treeViewBranchManager = new TreeViewBranchManager(treeView);
+
+    this.subscriptions.add(
+      new Disposable(() => {
+        this.treeView = null;
+        this.treeViewBranchManager.destroy();
+        this.treeViewBranchManager = null;
+      })
+    );
   },
 
   setupOutputViewToggle(statusBar) {
@@ -299,8 +299,7 @@ module.exports = {
     const link = document.createElement("a");
     link.appendChild(icon);
     link.onclick = _e => {
-      if (this.outputView.isDestroyed) this.outputView = new OutputViewContainer();
-      this.outputView.toggle();
+      viewController.getOutputView().toggle();
     };
     atom.tooltips.add(div, { title: "Toggle Git-Plus Output" });
     div.appendChild(link);

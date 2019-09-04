@@ -264,6 +264,7 @@ alias us="git checkout HEAD"
 alias graph='git log --graph'
 alias gds='git log --diff-filter=D --summary'
 alias grj='cd $(git remind status -n | fzf)' # これはgit-remindがあることを前提としたコマンド。ない場合はbrewfileでinstallすること
+alias gbd="git branch --merged|egrep -v '\*|develop|master'|xargs git branch -d"
 
 # git系でpecoを使った選択系のコマンド
 alias gc='git switch $(git branch | sed -e "/*/d" | peco)'

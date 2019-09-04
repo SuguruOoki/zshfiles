@@ -1,5 +1,34 @@
 ## Changelog
 
+### 8.7.1
+
+- Merge [#796](https://github.com/akonwi/git-plus/issues/796) to fix command label for 'Fetch All'
+- Hopefully fix [#786](https://github.com/akonwi/git-plus/issues/786)
+
+### 8.7.0
+
+- Merge [#794](https://github.com/akonwi/git-plus/issues/794)
+  - New command, 'Delete Branch (Local and Remote)'
+- Fix [#791](https://github.com/akonwi/git-plus/issues/791)
+
+### 8.6.3
+
+- Fix [#783](https://github.com/akonwi/git-plus/issues/783)
+
+### 8.6.1
+
+- Fix [#781](https://github.com/akonwi/git-plus/issues/781)
+
+### 8.6.0
+
+- Show current branch next to the repo root in the tree view.
+  - This can be disabled in the general settings of the plugin.
+  - ![screenshot](https://dl.dropboxusercontent.com/s/bt3lbsd9oxqhhbh//tree-view-branch.png.png)
+
+### 8.5.0
+
+- Render emojis in commit messages. [#780](https://github.com/akonwi/git-plus/issues/780)
+
 ### 8.4.2
 
 - Fix for a window creating 2 output views at startup
