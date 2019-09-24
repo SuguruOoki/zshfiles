@@ -7,7 +7,5 @@ ne-knowledge.txt
 *credential.json
 .atom/packages/kite/*
 .atom/.atom-socket-secret-*
-<<<<<<< Updated upstream
-=======
 gcloud.sh
->>>>>>> Stashed changes
+bulk_invite_slack_channel.sh
