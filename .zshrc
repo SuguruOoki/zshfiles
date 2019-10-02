@@ -3,6 +3,9 @@ export EDITOR=vim
 # rubyをrbenvのものに切り替える
 export PATH=/usr/local/bin:$PATH
 
+# brew install したPHPのパス
+export PATH="/usr/local/opt/php@7.3/bin:$PATH"
+
 # Dockerのbuild kitを有効にするための環境変数
 export DOCKER_BUILDKIT=1
 
