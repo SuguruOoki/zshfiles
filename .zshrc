@@ -477,12 +477,13 @@ alias his=anyframe-widget-execute-history
 #}
 #alias cdd=__dirs
 alias cdd=anyframe-widget-cdr
-alias gs=gitswtich
+alias gs=gitswitch
 
 function gitswitch() {
-  local branch=$(git branch | sed -e "/*/d" | peco)
-  git switch $branch
-  if [ -e "compose.json" ]; then
+  local current_branch=$(git branch | grep \* | sed 's/ //g' | sed 's/*//g'})
+  local next_branch=$(git branch | sed -e "/*/d" | peco)
+  git switch $next_branch
+  if [ -e "composer.json" && !$current_branch!=$next_branch ]; then
     echo 'composer, laravel cache clear execute...'
     composer dump-autoload && php artisan cache:clear && php artisan config:clear && php artisan view:clear && php artisan route:clear
     echo 'done'
