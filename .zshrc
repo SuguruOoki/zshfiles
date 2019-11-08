@@ -5,8 +5,9 @@ export PATH=/usr/local/bin:$PATH
 
 # pyenvさんに~/.pyenvではなく、/usr/loca/var/pyenvを使うようにお願いする
 export PYENV_ROOT=/usr/local/var/pyenv
+
 # pyenvさんに自動補完機能を提供してもらう
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi)
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # brew install したPHPのパス
 export PATH="/usr/local/opt/php@7.3/bin:$PATH"
@@ -275,7 +276,7 @@ alias grj='cd $(git remind status -n | fzf)' # これはgit-remindがあるこ�
 alias gbd="git branch --merged|egrep -v '\*|develop|master'|xargs git branch -d"
 
 # git系でpecoを使った選択系のコマンド
-alias gc='git switch $(git branch | sed -e "/*/d" | peco)'
+# alias gc=''
 # alias gc='git checkout $(git branch | sed -e "/*/d" | peco)'
 alias gdel='~/zshfiles/git_controller/git-pchk.sh'
 alias gp='~/zshfiles/git_controller/git-padd.sh'
@@ -476,6 +477,16 @@ alias his=anyframe-widget-execute-history
 #}
 #alias cdd=__dirs
 alias cdd=anyframe-widget-cdr
+
+function gc() {
+  local branch=$(git branch | sed -e "/*/d" | peco)
+  git switch $branch
+  if [ -e compose.json ]; then
+    echo 'composer, laravel cache clear execute...'
+    composer dump-autoload && php artisan cache:clear && php artisan config:clear && php artisan view:clear && php artisan route:clear
+    echo 'done'
+  fi
+}
 
 # select history
 function peco-select-history() {
@@ -872,3 +883,9 @@ function create-project() {
   project_name=$1
   composer create-project --prefer-dist laravel/laravel $project_name
 }
+
+###-tns-completion-start-###
+if [ -f /Users/suguruohki/.tnsrc ]; then 
+    source /Users/suguruohki/.tnsrc 
+fi
+###-tns-completion-end-###
