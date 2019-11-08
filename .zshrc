@@ -480,7 +480,7 @@ alias cdd=anyframe-widget-cdr
 alias gs=gitswitch
 
 function gitswitch() {
-  local current_branch=$(git branch | grep \* | sed 's/ //g' | sed 's/*//g'})
+  local current_branch=$(git branch | grep \* | sed 's/ //g' | sed 's/*//g')
   local next_branch=$(git branch | sed -e "/*/d" | peco)
   git switch $next_branch
   if [ -e "composer.json" && !$current_branch!=$next_branch ]; then
