@@ -117,6 +117,7 @@ function daily() {
          chmod 755 "${day}.md";
     fi
 
+    cp ~/daily-report/daily-template ./"${day}.md"
     vim "${day}.md";
     git add -A;
     git commit -m "日報のアップロード ${year}-${month}-${day}";
